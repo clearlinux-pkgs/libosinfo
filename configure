@@ -1,1 +1,1 @@
---disable-vala --with-usb-ids-path={datadir}/hwdata --with-usb-pci-path={datadir}/hwdata --disable-tests
+--disable-vala --disable-tests
