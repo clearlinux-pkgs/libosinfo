@@ -6,7 +6,7 @@
 #
 Name     : libosinfo
 Version  : 1.1.0
-Release  : 4
+Release  : 5
 URL      : https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz
 Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz
 Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz.asc
