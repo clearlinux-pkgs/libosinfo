@@ -5,34 +5,35 @@
 # Source0 file verified with key 0xBE86EBB415104FDF (dan@berrange.com)
 #
 Name     : libosinfo
-Version  : 1.1.0
-Release  : 6
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz
-Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz.asc
+Version  : 1.2.0
+Release  : 7
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.2.0.tar.gz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.2.0.tar.gz
+Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.2.0.tar.gz.asc
 Summary  : A library for managing OS information for virtualization
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
 Requires: libosinfo-bin
 Requires: libosinfo-lib
-Requires: libosinfo-doc
+Requires: libosinfo-license
 Requires: libosinfo-locales
+Requires: libosinfo-man
 Requires: libosinfo-data
 Requires: clr-hardware-files
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
 BuildRequires : gettext
+BuildRequires : glibc-bin
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
 BuildRequires : intltool
 BuildRequires : libxslt-bin
 BuildRequires : perl(XML::Parser)
-BuildRequires : pkgconfig(check)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gobject-2.0)
-BuildRequires : pkgconfig(libsoup-2.4)
+BuildRequires : pkgconfig(libcurl)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
 
@@ -45,6 +46,8 @@ combination.
 Summary: bin components for the libosinfo package.
 Group: Binaries
 Requires: libosinfo-data
+Requires: libosinfo-license
+Requires: libosinfo-man
 
 %description bin
 bin components for the libosinfo package.
@@ -73,6 +76,7 @@ dev components for the libosinfo package.
 %package doc
 Summary: doc components for the libosinfo package.
 Group: Documentation
+Requires: libosinfo-man
 
 %description doc
 doc components for the libosinfo package.
@@ -82,9 +86,18 @@ doc components for the libosinfo package.
 Summary: lib components for the libosinfo package.
 Group: Libraries
 Requires: libosinfo-data
+Requires: libosinfo-license
 
 %description lib
 lib components for the libosinfo package.
+
+
+%package license
+Summary: license components for the libosinfo package.
+Group: Default
+
+%description license
+license components for the libosinfo package.
 
 
 %package locales
@@ -95,17 +108,25 @@ Group: Default
 locales components for the libosinfo package.
 
 
+%package man
+Summary: man components for the libosinfo package.
+Group: Default
+
+%description man
+man components for the libosinfo package.
+
+
 %prep
-%setup -q -n libosinfo-1.1.0
+%setup -q -n libosinfo-1.2.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1504627452
+export SOURCE_DATE_EPOCH=1532309887
 %configure --disable-static --disable-vala --disable-tests
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %check
 export LANG=C
@@ -115,8 +136,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1504627452
+export SOURCE_DATE_EPOCH=1532309887
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/libosinfo
+cp COPYING.LIB %{buildroot}/usr/share/doc/libosinfo/COPYING.LIB
+cp COPYING %{buildroot}/usr/share/doc/libosinfo/COPYING
 %make_install
 %find_lang libosinfo
 
@@ -180,8 +204,7 @@ rm -rf %{buildroot}
 /usr/lib64/pkgconfig/libosinfo-1.0.pc
 
 %files doc
-%defattr(-,root,root,-)
-%doc /usr/share/man/man1/*
+%defattr(0644,root,root,0755)
 /usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-enum-types.html
 /usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-version.html
 /usr/share/gtk-doc/html/Libosinfo/Libosinfo.devhelp2
@@ -240,7 +263,18 @@ rm -rf %{buildroot}
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libosinfo-1.0.so.0
-/usr/lib64/libosinfo-1.0.so.0.1001.0
+/usr/lib64/libosinfo-1.0.so.0.1002.0
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/libosinfo/COPYING
+/usr/share/doc/libosinfo/COPYING.LIB
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/osinfo-detect.1
+/usr/share/man/man1/osinfo-install-script.1
+/usr/share/man/man1/osinfo-query.1
 
 %files locales -f libosinfo.lang
 %defattr(-,root,root,-)
