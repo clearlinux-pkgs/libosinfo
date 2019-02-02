@@ -5,20 +5,20 @@
 # Source0 file verified with key 0xBE86EBB415104FDF (dan@berrange.com)
 #
 Name     : libosinfo
-Version  : 1.2.0
-Release  : 7
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.2.0.tar.gz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.2.0.tar.gz
-Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.2.0.tar.gz.asc
-Summary  : A library for managing OS information for virtualization
+Version  : 1.3.0
+Release  : 8
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.3.0.tar.gz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.3.0.tar.gz
+Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.3.0.tar.gz.asc
+Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
-Requires: libosinfo-bin
-Requires: libosinfo-lib
-Requires: libosinfo-license
-Requires: libosinfo-locales
-Requires: libosinfo-man
-Requires: libosinfo-data
+Requires: libosinfo-bin = %{version}-%{release}
+Requires: libosinfo-data = %{version}-%{release}
+Requires: libosinfo-lib = %{version}-%{release}
+Requires: libosinfo-license = %{version}-%{release}
+Requires: libosinfo-locales = %{version}-%{release}
+Requires: libosinfo-man = %{version}-%{release}
 Requires: clr-hardware-files
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
@@ -45,9 +45,9 @@ combination.
 %package bin
 Summary: bin components for the libosinfo package.
 Group: Binaries
-Requires: libosinfo-data
-Requires: libosinfo-license
-Requires: libosinfo-man
+Requires: libosinfo-data = %{version}-%{release}
+Requires: libosinfo-license = %{version}-%{release}
+Requires: libosinfo-man = %{version}-%{release}
 
 %description bin
 bin components for the libosinfo package.
@@ -64,10 +64,10 @@ data components for the libosinfo package.
 %package dev
 Summary: dev components for the libosinfo package.
 Group: Development
-Requires: libosinfo-lib
-Requires: libosinfo-bin
-Requires: libosinfo-data
-Provides: libosinfo-devel
+Requires: libosinfo-lib = %{version}-%{release}
+Requires: libosinfo-bin = %{version}-%{release}
+Requires: libosinfo-data = %{version}-%{release}
+Provides: libosinfo-devel = %{version}-%{release}
 
 %description dev
 dev components for the libosinfo package.
@@ -76,7 +76,7 @@ dev components for the libosinfo package.
 %package doc
 Summary: doc components for the libosinfo package.
 Group: Documentation
-Requires: libosinfo-man
+Requires: libosinfo-man = %{version}-%{release}
 
 %description doc
 doc components for the libosinfo package.
@@ -85,8 +85,8 @@ doc components for the libosinfo package.
 %package lib
 Summary: lib components for the libosinfo package.
 Group: Libraries
-Requires: libosinfo-data
-Requires: libosinfo-license
+Requires: libosinfo-data = %{version}-%{release}
+Requires: libosinfo-license = %{version}-%{release}
 
 %description lib
 lib components for the libosinfo package.
@@ -117,14 +117,14 @@ man components for the libosinfo package.
 
 
 %prep
-%setup -q -n libosinfo-1.2.0
+%setup -q -n libosinfo-1.3.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532309887
+export SOURCE_DATE_EPOCH=1549124348
 %configure --disable-static --disable-vala --disable-tests
 make  %{?_smp_mflags}
 
@@ -136,11 +136,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1532309887
+export SOURCE_DATE_EPOCH=1549124348
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/libosinfo
-cp COPYING.LIB %{buildroot}/usr/share/doc/libosinfo/COPYING.LIB
-cp COPYING %{buildroot}/usr/share/doc/libosinfo/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
+cp COPYING %{buildroot}/usr/share/package-licenses/libosinfo/COPYING
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 %make_install
 %find_lang libosinfo
 
@@ -177,6 +177,8 @@ cp COPYING %{buildroot}/usr/share/doc/libosinfo/COPYING
 /usr/include/libosinfo-1.0/osinfo/osinfo_entity.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_enum_types.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_filter.h
+/usr/include/libosinfo-1.0/osinfo/osinfo_image.h
+/usr/include/libosinfo-1.0/osinfo/osinfo_imagelist.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_install_config.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_install_config_param.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_install_config_paramlist.h
@@ -263,15 +265,15 @@ cp COPYING %{buildroot}/usr/share/doc/libosinfo/COPYING
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libosinfo-1.0.so.0
-/usr/lib64/libosinfo-1.0.so.0.1002.0
+/usr/lib64/libosinfo-1.0.so.0.1003.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/libosinfo/COPYING
-/usr/share/doc/libosinfo/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/libosinfo/COPYING
+/usr/share/package-licenses/libosinfo/COPYING.LIB
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/osinfo-detect.1
 /usr/share/man/man1/osinfo-install-script.1
 /usr/share/man/man1/osinfo-query.1
