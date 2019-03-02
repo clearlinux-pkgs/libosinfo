@@ -1,4 +1,193 @@
+2019-03-01  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Update NEWS for 1.4.0 release
+
+	Refresh translations from zanata
+
+	syms: Add "global" to 1.4.0 symbols
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	tests: Add identify_media() tests
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	db: Add missing attributes to fill_media()
+	Some new attributes have been added to OsinfoMedia, as:
+	- the install-script list (during this cycle);
+	- installer-script (1.3.0);
+
+	However, none of those attributes have been filled in in the media
+	accordingly to matched media.
+
+	Reviewed-by: Cole Robinson <crobinso@redhat.com>
+
+2019-02-19  Martin Blanchard  <tchaik@gmx.com>
+
+	build: Prefer gettext over intltool
+	intltool is outdated:
+
+	https://wiki.gnome.org/Initiatives/GnomeGoals/GettextMigration
+
+	Reviewed-by: Fabiano Fidêncio <fidencio@redhat.com>
+
+	build: Prefer autoreconf over gnome-autogen
+	gnome-common is completely deprecated:
+
+	https://wiki.gnome.org/Projects/GnomeCommon/Migration
+
+	Reviewed-by: Fabiano Fidêncio <fidencio@redhat.com>
+
+2019-02-18  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	tests: Add test-uris-common.h to the SOURCES
+	Otherwise some breakage can be seen when building libosinfo's RPM
+
+	test-uris-common.c:24:10: fatal error: test-uris-common.h: No such file or directory
+	 #include "test-uris-common.h"
+	          ^~~~~~~~~~~~~~~~~~~~
+	compilation terminated.
+	make[2]: *** [Makefile:1296: test_mediauris-test-uris-common.o] Error 1
+	make[2]: *** Waiting for unfinished jobs....
+	  CCLD     test-entity
+	test-mediauris.c:27:10: fatal error: test-uris-common.h: No such file or directory
+	 #include "test-uris-common.h"
+	          ^~~~~~~~~~~~~~~~~~~~
+	compilation terminated.
+	make[2]: *** [Makefile:1282: test_mediauris-test-mediauris.o] Error 1
+	test-treeuris.c:27:10: fatal error: test-uris-common.h: No such file or directory
+	 #include "test-uris-common.h"
+	          ^~~~~~~~~~~~~~~~~~~~
+	compilation terminated.
+	make[2]: *** [Makefile:1394: test_treeuris-test-treeuris.o] Error 1
+	test-uris-common.c:24:10: fatal error: test-uris-common.h: No such file or directory
+	 #include "test-uris-common.h"
+	          ^~~~~~~~~~~~~~~~~~~~
+	compilation terminated.
+	make[2]: *** [Makefile:1408: test_treeuris-test-uris-common.o] Error 1
+	test-imageuris.c:27:10: fatal error: test-uris-common.h: No such file or directory
+	 #include "test-uris-common.h"
+	          ^~~~~~~~~~~~~~~~~~~~
+	compilation terminated.
+	make[2]: *** [Makefile:1184: test_imageuris-test-imageuris.o] Error 1
+	test-uris-common.c:24:10: fatal error: test-uris-common.h: No such file or directory
+	 #include "test-uris-common.h"
+
+	test-uris-common: remove empty line at EOF
+	The empty line caused:
+	tests/test-uris-common.c
+	maint.mk: empty line(s) or no newline at EOF
+	make: *** [maint.mk:926: sc_prohibit_empty_lines_at_EOF] Error 1
+
+2019-02-18  Pino Toscano  <ptoscano@redhat.com>
+
+	voidlinux: add Void Linux test data
+
+	gentoo: add Gentoo Linux test data
+
+	archlinux: add Arch Linux test data
+
+	os: add OSINFO_RELEASE_STATUS_ROLLING
+	Add the OSINFO_RELEASE_STATUS_ROLLING value to the OsinfoReleaseStatus
+	enum, to track the new "rolling" release-status available in the osinfo
+	schema.
+
+2019-02-18  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	tests: Reduce code duplication in URI tests
+	Let's introduce a common file that does the check of the URI for all the
+	URI related tests.
+
+	By doing this we can avoid code duplication while also avoiding to have
+	all the tests merged together into a single one, which is not so good as
+	limits the developer to run and wait for the whole set of tests instead
+	of having the ability to just run the a specific one.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	tests: Add ubuntu 18.04.1 and 18.04.1.0 test data
+	Reviewed-by: Christophe Fergeau <cfergeau@redhat.com>
+
+	media: Don't assume identifiers are null terminated
+	Identifiers as volume-id, application, publisher, and system are not
+	null terminated and cannot be assumed as so.
+
+	By assuming those are null terminated strings, libosinfo ends up not
+	counting the last character of a MAX_* string and, consequently, not
+	properly identifying medias that have their identifiers with the MAX_*
+	size.
+
+	One example is the ubuntu-18.04.1.0-live-server-amd64.iso media, which
+	has as volume-id 'Ubuntu-Server 18.04.1+ LTS amd64'. As the volume-id
+	has exactly 32 characters it's never been matched as when reading the
+	media's volume-id it'd be read as 'Ubuntu-Server 18.04.1+ LTS amd6'.
+
+	Reviewed-by: Christophe Fergeau <cfergeau@redhat.com>
+
+	pureos: Add test data for pureos8
+	Reviewed-by: Cole Robinson <crobinso@redhat.com>
+
+2019-02-12  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	media: Make _supports_installer_script() aware of media installers
+	Reviewed-by: Christophe Fergeau <cfergeau@redhat.com>
+
+	test-media: Add test for media installer script
+	Reviewed-by: Christophe Fergeau <cfergeau@redhat.com>
+
+	media: Add installer to the media
+	Having the installer tied to the OS is something that has been shown not
+	optimal, unfortunately.
+
+	An OS may have a few different medias and each media may support a
+	specific type of script or, even, not support an installer script at
+	all. With this in mind, let's have the installer scripts tied to the
+	medias themselves.
+
+	Reviewed-by: Christophe Fergeau <cfergeau@redhat.com>
+
+2019-02-04  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	tests: abort() in case curl misbehaves
+	Although the issue with curl should be fixed by the previous commit,
+	let's abort in case it misbehaves, avoiding then to have all the data
+	printed on stdout.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	tests: Avoid re-using the curl handler on URIs tests
+	On CentOS, we've hit an issue that when a curl handler is re-used we end
+	up receiving malfunctioning responses from NetBSD CDN.
+
+	Dan investigated the issue found out that the problem is that libcurl in
+	CentOS 7 at least is not ignoring the body. Sometimes it closes the
+	keepalive connection so this doesn't matter, but other times it gives
+	us back the body that it should be ignoring.
+
+	In order to work the issue around, let's no re-use the curl handler but
+	always open a new one for each of the URIs.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+2019-02-04  Cole Robinson  <crobinso@redhat.com>
+
+	ubuntu: Add 19.04 ppc64el test data
+	Reviewed-by: Fabiano Fidêncio <fidencio@redhat.com>
+
+2019-02-04  Daniel P. Berrangé  <berrange@redhat.com>
+
+	tests: add one test case per OS tested
+	The image, media & tree URIs test suites just register one test case for
+	all the work they do. As a result when they run they just sit there
+	printing no progress information for a long time.
+
+	This changes then to register one test case per OS in the database. As a
+	result we get progress information. An added benefit is that it is
+	possible to now run tests for individual OS by passing the -p argument.
+
+	  eg  test-mediauris -p /mediauris/uris/rhel3.9
+
 2019-01-30  Daniel P. Berrangé  <berrange@redhat.com>
+
+	Post release version bump to 1.4.0
 
 	Update NEWS for 1.3.0 release
 
@@ -1276,7 +1465,7 @@
 	rhel: Add RHEL 7.5 isodata
 	Reviewed-by: Christophe Fergeau <cfergeau@redhat.com>
 
-2018-04-23  Fabiano Fidêncio  <fabiano@fidencio.org>
+2018-04-24  Fabiano Fidêncio  <fabiano@fidencio.org>
 
 	tumbleweed: Add "Kubic DVD/USB Stick" isodata
 	Reviewed-by: Charles Arnold <carnold@suse.com>
@@ -1641,7 +1830,7 @@
 
 	Remove blank lines at end of file
 
-2017-04-21  Michal Privoznik  <mprivozn@redhat.com>
+2017-04-22  Michal Privoznik  <mprivozn@redhat.com>
 
 	gitignore: Ignore tags
 	Acked-by: Christophe Fergeau <cfergeau@redhat.com>
@@ -4223,8 +4412,6 @@
 	gitignore: Ignore build-aux/compile
 	Which appears on f21
 
-2014-09-21  Cole Robinson  <crobinso@redhat.com>
-
 	m4: Update manywarnings from gnulib
 	Fixes these noisy errors on Fedora 21:
 
@@ -5033,7 +5220,7 @@
 
 	debian,test: Add OS info/testcase for Debian 7.0.*
 
-2013-04-26  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
+2013-04-27  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	fedora: Specify installation method/source
 	While installation method/source has always been mandatory, Anaconda has
@@ -5078,7 +5265,7 @@
 
 	This API enables apps to query such command line, if any.
 
-2013-04-11  Fabiano Fidêncio  <fidencio@redhat.com>
+2013-04-12  Fabiano Fidêncio  <fidencio@redhat.com>
 
 	rhel,installer: Change RHEL's install script expected filename
 	Although Kickstart doesn't care about the script filename, once the path
@@ -5087,7 +5274,7 @@
 
 	Fix "FASLSE" typo in osinfo_install_script_get_can_pre_install_drivers() API doc
 
-2013-04-11  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
+2013-04-12  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	(Very late) post-release version bump
 
@@ -5536,8 +5723,6 @@
 	Add Marc-André to AUTHORS
 	Fixes `make syntax-check`
 
-2013-02-06  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
-
 	install-script tool: Take GFile creation out of the loop
 	Also, unref the GFile when done.
 
@@ -5645,7 +5830,7 @@
 	Revert "Use OS-specific config in OsinfoInstallScript"
 	This reverts commit 99beb54c7b9a0cfa6285fb2988ed93c406c452a3.
 
-2013-01-08  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
+2013-01-09  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	Add install script for RHEL 6.x
 	The same script might work for other RHEL 6.x too but I have only tested
@@ -5772,8 +5957,6 @@
 	Osinfo:entity is no longer construct-only
 	As you'll see in the following patch, we need to set ID on existing media
 	instances now.
-
-2012-12-28  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	rhel: Really correct minimum RAM for RHEL6
 	RHEL6 requires 512MB, not 256 as per documentation:
@@ -7320,7 +7503,7 @@
 
 	Yet more ubuntu ISO file signatures
 
-2012-02-22  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
+2012-02-23  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	Proper/complete name of Canonical & Microsoft
 
@@ -7750,9 +7933,11 @@
 
 	Correct Cflags and Libs in .pc file
 
-2011-10-03  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
+2011-10-04  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	Include libxml2 in gir files
+
+2011-10-03  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	Fix two small introspection annotations
 
@@ -7974,8 +8159,6 @@
 	Add OS metadata for supported RHEL releases
 	Also add last supported RHEL releases to allow upgrades to supported
 	ones.
-
-2011-06-07  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
 	Add XML for Qemu/KVM PS2 devices
 	Add PS2 keyboard and mouse to Qemu/KVM device DB.

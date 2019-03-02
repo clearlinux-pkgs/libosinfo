@@ -16,6 +16,7 @@ libosinfo-1.0.so.0:LIBOSINFO_0.2.7
 libosinfo-1.0.so.0:LIBOSINFO_0.2.8
 libosinfo-1.0.so.0:LIBOSINFO_0.2.9
 libosinfo-1.0.so.0:LIBOSINFO_1.3.0
+libosinfo-1.0.so.0:LIBOSINFO_1.4.0
 libosinfo-1.0.so.0:osinfo_avatar_format_get_alpha
 libosinfo-1.0.so.0:osinfo_avatar_format_get_height
 libosinfo-1.0.so.0:osinfo_avatar_format_get_mime_types
@@ -281,6 +282,7 @@ libosinfo-1.0.so.0:osinfo_loader_process_path
 libosinfo-1.0.so.0:osinfo_loader_process_system_path
 libosinfo-1.0.so.0:osinfo_loader_process_uri
 libosinfo-1.0.so.0:osinfo_loader_process_user_path
+libosinfo-1.0.so.0:osinfo_media_add_install_script
 libosinfo-1.0.so.0:osinfo_media_create_from_location
 libosinfo-1.0.so.0:osinfo_media_create_from_location_async
 libosinfo-1.0.so.0:osinfo_media_create_from_location_finish
@@ -290,6 +292,7 @@ libosinfo-1.0.so.0:osinfo_media_get_application_id
 libosinfo-1.0.so.0:osinfo_media_get_architecture
 libosinfo-1.0.so.0:osinfo_media_get_eject_after_install
 libosinfo-1.0.so.0:osinfo_media_get_initrd_path
+libosinfo-1.0.so.0:osinfo_media_get_install_script_list
 libosinfo-1.0.so.0:osinfo_media_get_installer
 libosinfo-1.0.so.0:osinfo_media_get_installer_reboots
 libosinfo-1.0.so.0:osinfo_media_get_kernel_path
