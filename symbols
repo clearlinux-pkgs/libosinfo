@@ -17,6 +17,7 @@ libosinfo-1.0.so.0:LIBOSINFO_0.2.8
 libosinfo-1.0.so.0:LIBOSINFO_0.2.9
 libosinfo-1.0.so.0:LIBOSINFO_1.3.0
 libosinfo-1.0.so.0:LIBOSINFO_1.4.0
+libosinfo-1.0.so.0:LIBOSINFO_1.5.0
 libosinfo-1.0.so.0:osinfo_avatar_format_get_alpha
 libosinfo-1.0.so.0:osinfo_avatar_format_get_height
 libosinfo-1.0.so.0:osinfo_avatar_format_get_mime_types
@@ -143,9 +144,12 @@ libosinfo-1.0.so.0:osinfo_filter_new
 libosinfo-1.0.so.0:osinfo_image_get_architecture
 libosinfo-1.0.so.0:osinfo_image_get_cloud_init
 libosinfo-1.0.so.0:osinfo_image_get_format
+libosinfo-1.0.so.0:osinfo_image_get_os
+libosinfo-1.0.so.0:osinfo_image_get_os_variants
 libosinfo-1.0.so.0:osinfo_image_get_type
 libosinfo-1.0.so.0:osinfo_image_get_url
 libosinfo-1.0.so.0:osinfo_image_new
+libosinfo-1.0.so.0:osinfo_image_set_os
 libosinfo-1.0.so.0:osinfo_imagelist_get_type
 libosinfo-1.0.so.0:osinfo_imagelist_new
 libosinfo-1.0.so.0:osinfo_install_config_get_admin_password
@@ -154,6 +158,7 @@ libosinfo-1.0.so.0:osinfo_install_config_get_avatar_location
 libosinfo-1.0.so.0:osinfo_install_config_get_driver_signing
 libosinfo-1.0.so.0:osinfo_install_config_get_hardware_arch
 libosinfo-1.0.so.0:osinfo_install_config_get_hostname
+libosinfo-1.0.so.0:osinfo_install_config_get_installation_url
 libosinfo-1.0.so.0:osinfo_install_config_get_l10n_keyboard
 libosinfo-1.0.so.0:osinfo_install_config_get_l10n_language
 libosinfo-1.0.so.0:osinfo_install_config_get_l10n_timezone
@@ -190,6 +195,7 @@ libosinfo-1.0.so.0:osinfo_install_config_set_avatar_location
 libosinfo-1.0.so.0:osinfo_install_config_set_driver_signing
 libosinfo-1.0.so.0:osinfo_install_config_set_hardware_arch
 libosinfo-1.0.so.0:osinfo_install_config_set_hostname
+libosinfo-1.0.so.0:osinfo_install_config_set_installation_url
 libosinfo-1.0.so.0:osinfo_install_config_set_l10n_keyboard
 libosinfo-1.0.so.0:osinfo_install_config_set_l10n_language
 libosinfo-1.0.so.0:osinfo_install_config_set_l10n_timezone
@@ -380,6 +386,7 @@ libosinfo-1.0.so.0:osinfo_product_get_related
 libosinfo-1.0.so.0:osinfo_product_get_release_date
 libosinfo-1.0.so.0:osinfo_product_get_release_date_string
 libosinfo-1.0.so.0:osinfo_product_get_short_id
+libosinfo-1.0.so.0:osinfo_product_get_short_id_list
 libosinfo-1.0.so.0:osinfo_product_get_type
 libosinfo-1.0.so.0:osinfo_product_get_vendor
 libosinfo-1.0.so.0:osinfo_product_get_version
@@ -423,6 +430,8 @@ libosinfo-1.0.so.0:osinfo_tree_get_architecture
 libosinfo-1.0.so.0:osinfo_tree_get_boot_iso_path
 libosinfo-1.0.so.0:osinfo_tree_get_initrd_path
 libosinfo-1.0.so.0:osinfo_tree_get_kernel_path
+libosinfo-1.0.so.0:osinfo_tree_get_os
+libosinfo-1.0.so.0:osinfo_tree_get_os_variants
 libosinfo-1.0.so.0:osinfo_tree_get_treeinfo_arch
 libosinfo-1.0.so.0:osinfo_tree_get_treeinfo_family
 libosinfo-1.0.so.0:osinfo_tree_get_treeinfo_variant
@@ -431,6 +440,7 @@ libosinfo-1.0.so.0:osinfo_tree_get_type
 libosinfo-1.0.so.0:osinfo_tree_get_url
 libosinfo-1.0.so.0:osinfo_tree_has_treeinfo
 libosinfo-1.0.so.0:osinfo_tree_new
+libosinfo-1.0.so.0:osinfo_tree_set_os
 libosinfo-1.0.so.0:osinfo_treelist_get_type
 libosinfo-1.0.so.0:osinfo_treelist_new
 libosinfo-1.0.so.0:osinfo_treelist_new_copy

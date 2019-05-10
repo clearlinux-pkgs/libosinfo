@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : libosinfo
-Version  : 1.4.0
-Release  : 9
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.4.0.tar.gz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.4.0.tar.gz
-Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.4.0.tar.gz.asc
+Version  : 1.5.0
+Release  : 10
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
+Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz.asc
 Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
@@ -23,7 +23,6 @@ Requires: clr-hardware-files
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
 BuildRequires : gettext
-BuildRequires : glibc-bin
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
@@ -32,7 +31,6 @@ BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gobject-2.0)
-BuildRequires : pkgconfig(libcurl)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
 
@@ -65,8 +63,8 @@ Group: Development
 Requires: libosinfo-lib = %{version}-%{release}
 Requires: libosinfo-bin = %{version}-%{release}
 Requires: libosinfo-data = %{version}-%{release}
-Requires: libosinfo-man = %{version}-%{release}
 Provides: libosinfo-devel = %{version}-%{release}
+Requires: libosinfo = %{version}-%{release}
 Requires: libosinfo = %{version}-%{release}
 
 %description dev
@@ -117,14 +115,21 @@ man components for the libosinfo package.
 
 
 %prep
-%setup -q -n libosinfo-1.4.0
+%setup -q -n libosinfo-1.5.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551541026
+export SOURCE_DATE_EPOCH=1557459750
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static --disable-vala --disable-tests
 make  %{?_smp_mflags}
 
@@ -136,7 +141,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1551541026
+export SOURCE_DATE_EPOCH=1557459750
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
 cp COPYING %{buildroot}/usr/share/package-licenses/libosinfo/COPYING
@@ -225,6 +230,8 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 /usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceList.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoEntity.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoFilter.html
+/usr/share/gtk-doc/html/Libosinfo/OsinfoImage.html
+/usr/share/gtk-doc/html/Libosinfo/OsinfoImageList.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfig.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParam.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParamList.html
@@ -265,7 +272,7 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libosinfo-1.0.so.0
-/usr/lib64/libosinfo-1.0.so.0.1004.0
+/usr/lib64/libosinfo-1.0.so.0.1005.0
 
 %files license
 %defattr(0644,root,root,0755)
