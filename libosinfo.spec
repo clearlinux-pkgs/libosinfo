@@ -6,11 +6,11 @@
 #
 Name     : libosinfo
 Version  : 1.5.0
-Release  : 10
+Release  : 11
 URL      : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
 Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
 Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz.asc
-Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
+Summary  : A library for managing OS information for virtualization
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
 Requires: libosinfo-bin = %{version}-%{release}
@@ -23,6 +23,7 @@ Requires: clr-hardware-files
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
 BuildRequires : gettext
+BuildRequires : glibc-bin
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
@@ -33,6 +34,7 @@ BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
+BuildRequires : vala-dev
 
 %description
 libosinfo is a library that allows virtualization provisioning tools to
@@ -64,7 +66,6 @@ Requires: libosinfo-lib = %{version}-%{release}
 Requires: libosinfo-bin = %{version}-%{release}
 Requires: libosinfo-data = %{version}-%{release}
 Provides: libosinfo-devel = %{version}-%{release}
-Requires: libosinfo = %{version}-%{release}
 Requires: libosinfo = %{version}-%{release}
 
 %description dev
@@ -122,7 +123,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557459750
+export SOURCE_DATE_EPOCH=1558117660
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -130,7 +132,7 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-%configure --disable-static --disable-vala --disable-tests
+%configure --disable-static --enable-vala --disable-tests
 make  %{?_smp_mflags}
 
 %check
@@ -141,7 +143,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1557459750
+export SOURCE_DATE_EPOCH=1558117660
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
 cp COPYING %{buildroot}/usr/share/package-licenses/libosinfo/COPYING
@@ -162,6 +164,7 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 %defattr(-,root,root,-)
 /usr/lib64/girepository-1.0/Libosinfo-1.0.typelib
 /usr/share/gir-1.0/*.gir
+/usr/share/vala/vapi/libosinfo-1.0.vapi
 
 %files dev
 %defattr(-,root,root,-)

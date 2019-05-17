@@ -1,1 +1,1 @@
---disable-vala --disable-tests
+--enable-vala --disable-tests
