@@ -6,11 +6,11 @@
 #
 Name     : libosinfo
 Version  : 1.5.0
-Release  : 11
+Release  : 12
 URL      : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
 Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
 Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz.asc
-Summary  : A library for managing OS information for virtualization
+Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
 Requires: libosinfo-bin = %{version}-%{release}
@@ -35,6 +35,7 @@ BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
 BuildRequires : vala-dev
+Patch1: crash.patch
 
 %description
 libosinfo is a library that allows virtualization provisioning tools to
@@ -66,6 +67,7 @@ Requires: libosinfo-lib = %{version}-%{release}
 Requires: libosinfo-bin = %{version}-%{release}
 Requires: libosinfo-data = %{version}-%{release}
 Provides: libosinfo-devel = %{version}-%{release}
+Requires: libosinfo = %{version}-%{release}
 Requires: libosinfo = %{version}-%{release}
 
 %description dev
@@ -117,13 +119,14 @@ man components for the libosinfo package.
 
 %prep
 %setup -q -n libosinfo-1.5.0
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558117660
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563035935
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -136,14 +139,14 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1558117660
+export SOURCE_DATE_EPOCH=1563035935
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
 cp COPYING %{buildroot}/usr/share/package-licenses/libosinfo/COPYING
