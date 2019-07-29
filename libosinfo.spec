@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : libosinfo
-Version  : 1.5.0
-Release  : 12
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
-Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz.asc
+Version  : 1.6.0
+Release  : 13
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
+Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz.asc
 Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
@@ -23,7 +23,6 @@ Requires: clr-hardware-files
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
 BuildRequires : gettext
-BuildRequires : glibc-bin
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
@@ -32,6 +31,7 @@ BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gobject-2.0)
+BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
 BuildRequires : vala-dev
@@ -118,7 +118,7 @@ man components for the libosinfo package.
 
 
 %prep
-%setup -q -n libosinfo-1.5.0
+%setup -q -n libosinfo-1.6.0
 %patch1 -p1
 
 %build
@@ -126,7 +126,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563035935
+export SOURCE_DATE_EPOCH=1564415729
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -146,7 +146,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1563035935
+export SOURCE_DATE_EPOCH=1564415729
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
 cp COPYING %{buildroot}/usr/share/package-licenses/libosinfo/COPYING
@@ -278,7 +278,7 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libosinfo-1.0.so.0
-/usr/lib64/libosinfo-1.0.so.0.1005.0
+/usr/lib64/libosinfo-1.0.so.0.1006.0
 
 %files license
 %defattr(0644,root,root,0755)
