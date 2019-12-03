@@ -1,3 +1,7 @@
-1.6.0
-glibc-bin
-gobject-introspection-dev
+1.7.0
+docbook-xml
+gobject-introspection
+gtk-doc
+libsoup-dev
+pkgconfig(libsoup-2.4)
+pkgconfig(libxslt)

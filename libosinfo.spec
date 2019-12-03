@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : libosinfo
-Version  : 1.6.0
-Release  : 13
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
-Source99 : https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz.asc
-Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
+Version  : 1.7.0
+Release  : 14
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.7.0.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.7.0.tar.xz
+Source1 : https://releases.pagure.org/libosinfo/libosinfo-1.7.0.tar.xz.asc
+Summary  : A library for managing OS information for virtualization
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
 Requires: libosinfo-bin = %{version}-%{release}
@@ -20,22 +20,15 @@ Requires: libosinfo-license = %{version}-%{release}
 Requires: libosinfo-locales = %{version}-%{release}
 Requires: libosinfo-man = %{version}-%{release}
 Requires: clr-hardware-files
+BuildRequires : buildreq-meson
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
-BuildRequires : gettext
-BuildRequires : gobject-introspection-dev
+BuildRequires : gobject-introspection
 BuildRequires : gtk-doc
-BuildRequires : gtk-doc-dev
-BuildRequires : libxslt-bin
-BuildRequires : perl(XML::Parser)
-BuildRequires : pkgconfig(gio-2.0)
-BuildRequires : pkgconfig(glib-2.0)
-BuildRequires : pkgconfig(gobject-2.0)
+BuildRequires : libsoup-dev
 BuildRequires : pkgconfig(libsoup-2.4)
-BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
 BuildRequires : vala-dev
-Patch1: crash.patch
 
 %description
 libosinfo is a library that allows virtualization provisioning tools to
@@ -67,7 +60,6 @@ Requires: libosinfo-lib = %{version}-%{release}
 Requires: libosinfo-bin = %{version}-%{release}
 Requires: libosinfo-data = %{version}-%{release}
 Provides: libosinfo-devel = %{version}-%{release}
-Requires: libosinfo = %{version}-%{release}
 Requires: libosinfo = %{version}-%{release}
 
 %description dev
@@ -118,15 +110,15 @@ man components for the libosinfo package.
 
 
 %prep
-%setup -q -n libosinfo-1.6.0
-%patch1 -p1
+%setup -q -n libosinfo-1.7.0
+cd %{_builddir}/libosinfo-1.7.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564415729
+export SOURCE_DATE_EPOCH=1575400699
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -135,23 +127,15 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-%configure --disable-static --enable-vala --disable-tests
-make  %{?_smp_mflags}
-
-%check
-export LANG=C.UTF-8
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check || :
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Denable-vala=enabled \
+-Denable-tests=false  builddir
+ninja -v -C builddir
 
 %install
-export SOURCE_DATE_EPOCH=1564415729
-rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
-cp COPYING %{buildroot}/usr/share/package-licenses/libosinfo/COPYING
-cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
-%make_install
+cp %{_builddir}/libosinfo-1.7.0/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/libosinfo-1.7.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
+DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang libosinfo
 
 %files
@@ -167,6 +151,7 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 %defattr(-,root,root,-)
 /usr/lib64/girepository-1.0/Libosinfo-1.0.typelib
 /usr/share/gir-1.0/*.gir
+/usr/share/vala/vapi/libosinfo-1.0.deps
 /usr/share/vala/vapi/libosinfo-1.0.vapi
 
 %files dev
@@ -188,6 +173,8 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 /usr/include/libosinfo-1.0/osinfo/osinfo_entity.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_enum_types.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_filter.h
+/usr/include/libosinfo-1.0/osinfo/osinfo_firmware.h
+/usr/include/libosinfo-1.0/osinfo/osinfo_firmwarelist.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_image.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_imagelist.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_install_config.h
@@ -236,6 +223,8 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 /usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceList.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoEntity.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoFilter.html
+/usr/share/gtk-doc/html/Libosinfo/OsinfoFirmware.html
+/usr/share/gtk-doc/html/Libosinfo/OsinfoFirmwareList.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoImage.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoImageList.html
 /usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfig.html
@@ -278,12 +267,12 @@ cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/COPYING.LIB
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libosinfo-1.0.so.0
-/usr/lib64/libosinfo-1.0.so.0.1006.0
+/usr/lib64/libosinfo-1.0.so.0.1007.0
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libosinfo/COPYING
-/usr/share/package-licenses/libosinfo/COPYING.LIB
+/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
+/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 
 %files man
 %defattr(0644,root,root,0755)

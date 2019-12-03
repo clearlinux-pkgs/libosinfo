@@ -1,1 +1,2 @@
---enable-vala --disable-tests
+-Denable-vala=enabled
+-Denable-tests=false
