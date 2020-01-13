@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : libosinfo
-Version  : 1.7.0
-Release  : 14
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.7.0.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.7.0.tar.xz
-Source1 : https://releases.pagure.org/libosinfo/libosinfo-1.7.0.tar.xz.asc
-Summary  : A library for managing OS information for virtualization
+Version  : 1.7.1
+Release  : 15
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz.asc
+Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
 Requires: libosinfo-bin = %{version}-%{release}
@@ -61,6 +61,7 @@ Requires: libosinfo-bin = %{version}-%{release}
 Requires: libosinfo-data = %{version}-%{release}
 Provides: libosinfo-devel = %{version}-%{release}
 Requires: libosinfo = %{version}-%{release}
+Requires: libosinfo = %{version}-%{release}
 
 %description dev
 dev components for the libosinfo package.
@@ -110,15 +111,16 @@ man components for the libosinfo package.
 
 
 %prep
-%setup -q -n libosinfo-1.7.0
-cd %{_builddir}/libosinfo-1.7.0
+%setup -q -n libosinfo-1.7.1
+cd %{_builddir}/libosinfo-1.7.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575400699
+export SOURCE_DATE_EPOCH=1578940067
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -133,8 +135,8 @@ ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
-cp %{_builddir}/libosinfo-1.7.0/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/libosinfo-1.7.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/libosinfo-1.7.1/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/libosinfo-1.7.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang libosinfo
 

@@ -1,4 +1,71 @@
+2019-12-04  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Update NEWS for 1.7.1 release
+
+	build: Switch the project's version to 1.7.1
+	It's done as an 1.7.1 release is needed in order to fix the breakage
+	caused by not using versioned symbols in 1.7.0 release.
+
+	build: Only define {PCI,USB}_IDS in {pci,usb}-ids-path are defined
+	Setting those regardless of {pci,usb}-ids-path being explicitly set or
+	automatically detected is a regression compared to what we were doing
+	when using autotools.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	build: Set {pci,usb}.ids paths
+	In case pci.ids or usb.ids files are shipped by libosinfo, pci_ids_path
+	and usb_ids_path must be set accordingly.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+2019-12-03  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	build: Use versioned symbols
+	During 25c45ffd9a1b8f18f56974d5b9b6b2c1da8cbd0c, supported for versioned
+	symbols were (wrongly) introduced but never used.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+2019-12-02  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	mingw,spec: Use %autosetup
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	mingw,spec: Drop gettext BuildRequires
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	mingw.spec: Add hwdata as BuildRequires
+	Seems that when using `fedpkg scratch-build` we cannot rely on having
+	network access, making the download of the usb and pci ids files to
+	fail, causing then a build error as the files won't be found to be
+	shipped.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	mingw.spec: Add gcc as BuildRequires
+	meson requires both compiler and cross-compiler in order to perform a
+	cross build.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	mingw,spec: Add intltool as BuildRequires
+	Otherwise the translations are not generated.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+	build: Install {usb,pci}.ids if not shipped
+	In case usb.ids and pci.ids are not shipped, let's also install them as
+	part of libosinfo installation.
+
+	install_data() will automatically install the files to the
+	standards-conforming location.
+
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
 2019-11-29  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Post release version bump to 1.8.0
 
 	build: Disable -Wcast-warn
 	It causes issues when generating Libosinfo-scan.c on armv7hl.
