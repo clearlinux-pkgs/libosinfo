@@ -6,11 +6,11 @@
 #
 Name     : libosinfo
 Version  : 1.7.1
-Release  : 15
+Release  : 16
 URL      : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
 Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
 Source1  : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz.asc
-Summary  : GObject based library API for managing information about operating systems, hypervisors and the (virtual) hardware devices they can support
+Summary  : A library for managing OS information for virtualization
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
 Requires: libosinfo-bin = %{version}-%{release}
@@ -23,7 +23,7 @@ Requires: clr-hardware-files
 BuildRequires : buildreq-meson
 BuildRequires : clr-hardware-files
 BuildRequires : docbook-xml
-BuildRequires : gobject-introspection
+BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : libsoup-dev
 BuildRequires : pkgconfig(libsoup-2.4)
@@ -60,7 +60,6 @@ Requires: libosinfo-lib = %{version}-%{release}
 Requires: libosinfo-bin = %{version}-%{release}
 Requires: libosinfo-data = %{version}-%{release}
 Provides: libosinfo-devel = %{version}-%{release}
-Requires: libosinfo = %{version}-%{release}
 Requires: libosinfo = %{version}-%{release}
 
 %description dev
@@ -119,15 +118,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578940067
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1586066297
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Denable-vala=enabled \
 -Denable-tests=false  builddir

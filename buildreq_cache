@@ -1,6 +1,5 @@
 1.7.1
 docbook-xml
-gobject-introspection
 gtk-doc
 libsoup-dev
 pkgconfig(libsoup-2.4)

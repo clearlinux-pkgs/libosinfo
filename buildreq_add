@@ -2,3 +2,4 @@
 # picked up automatically. One name per line, no whitespace.
 clr-hardware-files
 vala-dev
+gobject-introspection-dev
