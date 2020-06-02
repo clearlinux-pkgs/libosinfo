@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : libosinfo
-Version  : 1.7.1
-Release  : 16
-URL      : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz.asc
+Version  : 1.8.0
+Release  : 17
+URL      : https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz.asc
 Summary  : A library for managing OS information for virtualization
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1 LGPL-2.1+
@@ -110,15 +110,15 @@ man components for the libosinfo package.
 
 
 %prep
-%setup -q -n libosinfo-1.7.1
-cd %{_builddir}/libosinfo-1.7.1
+%setup -q -n libosinfo-1.8.0
+cd %{_builddir}/libosinfo-1.8.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586066297
+export SOURCE_DATE_EPOCH=1591110729
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -133,8 +133,8 @@ ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
-cp %{_builddir}/libosinfo-1.7.1/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/libosinfo-1.7.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/libosinfo-1.8.0/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/libosinfo-1.8.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang libosinfo
 
@@ -184,6 +184,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/libosinfo-1.0/osinfo/osinfo_install_scriptlist.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_list.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_loader.h
+/usr/include/libosinfo-1.0/osinfo/osinfo_macros.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_media.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_medialist.h
 /usr/include/libosinfo-1.0/osinfo/osinfo_os.h
@@ -205,50 +206,50 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files doc
 %defattr(0644,root,root,0755)
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-OsinfoFilter.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-avatar-format.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-datamap.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-datamaplist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-db.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-deployment.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-deploymentlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-device-driver.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-device-driverlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-device.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelink.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelinkfilter.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelinklist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-devicelist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-entity.html
 /usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-enum-types.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-firmware.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-firmwarelist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-image.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-imagelist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-config-param.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-config-paramlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-config.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-script.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-install-scriptlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-list.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-loader.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-media.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-medialist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-os-variant.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-os-variantlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-os.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-oslist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-platform.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-platformlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-product.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-productfilter.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-productlist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-resources.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-resourceslist.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-tree.html
+/usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-treelist.html
 /usr/share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-version.html
 /usr/share/gtk-doc/html/Libosinfo/Libosinfo.devhelp2
-/usr/share/gtk-doc/html/Libosinfo/OsinfoAvatarFormat.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDatamap.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDatamapList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDb.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeployment.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeploymentList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDevice.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceDriver.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceDriverList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceLink.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceLinkFilter.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceLinkList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoDeviceList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoEntity.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoFilter.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoFirmware.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoFirmwareList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoImage.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoImageList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfig.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParam.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParamList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoInstallScript.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoInstallScriptList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoLoader.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoMedia.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoMediaList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoOs.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoOsList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoOsVariant.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoOsVariantList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoPlatform.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoPlatformList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoProduct.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoProductFilter.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoProductList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoResources.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoResourcesList.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoTree.html
-/usr/share/gtk-doc/html/Libosinfo/OsinfoTreeList.html
 /usr/share/gtk-doc/html/Libosinfo/annotation-glossary.html
 /usr/share/gtk-doc/html/Libosinfo/api-index-full.html
 /usr/share/gtk-doc/html/Libosinfo/ch01.html
@@ -267,7 +268,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libosinfo-1.0.so.0
-/usr/lib64/libosinfo-1.0.so.0.1007.0
+/usr/lib64/libosinfo-1.0.so.0.1008.0
 
 %files license
 %defattr(0644,root,root,0755)

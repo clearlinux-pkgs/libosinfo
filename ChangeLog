@@ -1,4 +1,984 @@
+2020-05-29  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Update NEWS for 1.8.0 release
+
+2020-05-29  Weblate  <noreply@weblate.org>
+
+	Update translation files
+	Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+
+2020-05-29  Julien Humbert  <julroy67@gmail.com>
+
+	Translated using Weblate (French)
+	Currently translated at 98.8% (167 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+2020-05-28  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Use GitLab container registry
+	Instead of using pre-built containers hosted on Quay, build
+	containers as part of the GitLab CI pipeline and upload them to the
+	GitLab container registry for later use.
+
+	This does not slow down builds, because containers are only rebuilt
+	when the corresponding Dockerfile has been modified.
+
+2020-05-22  Manuela Silva  <mmsrs@sky.com>
+
+	Translated using Weblate (Portuguese (Portugal))
+	Currently translated at 57.9% (98 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pt_PT/
+
+2020-05-22  Anonymous  <noreply@weblate.org>
+
+	Translated using Weblate (Indonesian)
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/id/
+
+2020-05-22  Andika Triwidada  <andika@gmail.com>
+
+	Translated using Weblate (Indonesian)
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/id/
+
+2020-05-22  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-05-22  Yuri Chornoivan  <yurchor@ukr.net>
+
+	Translated using Weblate (Ukrainian)
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/uk/
+
+2020-05-21  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Translated using Weblate (Polish)
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pl/
+
+2020-05-21  Anonymous  <noreply@weblate.org>
+
+	Translated using Weblate (Indonesian)
+	Currently translated at 1.1% (2 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/id/
+
+
+	Translated using Weblate (Polish)
+
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pl/
+
+2020-05-21  Manuela Silva  <mmsrs@sky.com>
+
+	Added translation using Weblate (Portuguese (Portugal))
+
+2020-05-20  Weblate  <noreply@weblate.org>
+
+	Update translation files
+	Updated by "Update LINGUAS file" hook in Weblate.
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+
+	Update translation files
+	Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+
+2020-05-20  Pino Toscano  <ptoscano@redhat.com>
+
+	po: remove duplicated msgid in 'id' catalog
+	Fix it manually, otherwise gettext tools cannot work with it.
+
+2020-05-20  Weblate  <noreply@weblate.org>
+
+	Update translation files
+	Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+
+2020-05-14  Daniel P. Berrangé  <berrange@redhat.com>
+
+	build-aux: use gmake for syntax-check rules
+	Previously on FreeBSD the syntax-check rules would be a no-op because
+	its non-GNU make wouldn't see the GNUmakefile and would report no work
+	to do:
+
+	$ MESON_SOURCE_ROOT=`pwd` build-aux/syntax-check
+	`syntax-check' is up to date.
+
+	Since we moved everything into a syntax-check.mk that we call explicitly
+	though, we're the non-GNU make tries to execute rules that depend on
+	GNU make features.
+
+	build-aux: fix references to old maint.mk name
+
+2020-05-13  Daniel P. Berrangé  <berrange@redhat.com>
+
+	build-aux: rename maint.mk to syntax-check.mk
+	This name aligns with what the makefile actally does.
+
+	build-aux: remove GNUmakefile entirely
+	The only useful bits it still did were setting a couple of variables,
+	which can be moved into the main maint.mk file.
+
+	build-aux: merge cfg.mk into maint.mk
+	Since we took full ownership of a cut down maint.mk there's no
+	need to keep local additions separately in cfg.mk
+
+	This fixes a bug which caused the contents of cfg.mk to be
+	skipped since the moving of files into the build-aux dir
+	and switch to meson.
+
+	build-aux: trim obsolete maint rules
+	Many rules in maint.mk are doing checks related to makefiles, or
+	autoconf, or gnulib, none of which are used by libosinfo. There
+	are also many misc rules related to publishing of releases that
+	are never used. Trimming this out makes the resulting file more
+	managable.
+
+2020-05-13  Pino Toscano  <ptoscano@redhat.com>
+
+	po: update LINGUAS
+	Add tr.
+
+	id is not added as it has errors; hope that the update of the catalog
+	will trigger an update in weblate, generating a correct po file.
+
+	Drop Zanata leftovers
+	libosinfo uses Weblate for translations.
+
+	po: regenerate libosinfo.pot
+
+2020-05-04  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	README: MR is the preferred way to submit a patch
+	Unlikely of what our README mentioned, the preferred way to submit a
+	patch to libosinfo is opening a Merge Request against our GitLab
+	project.
+
+2020-05-03  Andika Triwidada  <andika@gmail.com>
+
+	Translated using Weblate (Indonesian)
+	Currently translated at 0.5% (1 of 167 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/id/
+
+2020-05-01  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Use 'check-dco' container for DCO checking
+	This container image, which has been created for this specific
+	purporse and is already used by many projects under the libvirt
+	umbrella, contains a nicer Python implementation of the
+	require-dco.sh script that's guaranteed to be kept up to date.
+
+	ci: Merge templates into native-build-job
+	At this point, the only difference between the existing templates
+	is that one of them includes the RPM build job, and since we now
+	have a way to skip that part for specific targets, we can get rid
+	of the duplication and merge them into a single template.
+
+	ci: Introduce multilib
+	This is a bit yucky, but it's only temporary: like the target ABI,
+	this information is tied to the container image and as such should
+	be baked into it. When that happens, we can simply drop this
+	altogether, but in the meantime this bit of scripting allow us to
+	have a single environment instead of two.
+
+	ci: Merge templates into mingw-build-job
+	The mingw32 and mingw64 templates are basically identical at this
+	point, so let's merge them into a generic one.
+
+	ci: Split off mingw-environment
+	Follow the environment/script split, like we do everywhere else.
+
+	We can have a single environment that works both for mingw32 and
+	mingw64 builds because the only difference between the two is
+	which ABI they target, and we can obtain that piece of information
+	from the $ABI environment variable that's baked into the container
+	images.
+
+	ci: Move more information to the job templates
+	In particular, we can avoid repeating the parts of the container
+	image name that are always the same.
+
+	ci: Introduce pipeline stages
+	There's only a single stage for now.
+
+	ci: Use standard template for CentOS 7 and openSUSE 15.1
+	The only difference between the open-coded job definition currently
+	in use for these target platforms and the standard template is that
+	the former don't include the RPM build job, but now that we have a
+	way to skip that part selectively we can remove these special cases.
+
+	ci: Make RPM job skippable
+	We're sort of cheating by exiting right away when asked to skip
+	the RPM job, but we know that it's always going to be the last job
+	in a script and we currently have no need to skip any other job,
+	so let's start with the simplest possible implementation and
+	consider something more complex if and when the need arises.
+
+2020-04-30  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Move builds from Ubuntu 16.04 to Ubuntu 20.04
+
+	ci: Move builds from Fedora 30 to Fedora 32
+
+	ci: Move MinGW builds from Fedora 30 to Fedora Rawhide
+
+2020-04-30  Andika Triwidada  <andika@gmail.com>
+
+	Added translation using Weblate (Indonesian)
+
+2020-04-21  Gianluca Sforna  <giallu@gmail.com>
+
+	Translated using Weblate (Italian)
+	Currently translated at 97.6% (164 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/it/
+
+2020-04-20  Andrea Bolognani  <abologna@redhat.com>
+
+	prepare-release: Move release archive out of DIST_ROOT
+	If the build has been successful, we can fish the release archive
+	out of DIST_ROOT and expose it in the top-level source directory,
+	just like autotools would do, for extra convenience.
+
+	prepare-release: Define DIST_ROOT
+	This is the subdirectory of BUILD_ROOT where the release archive
+	is generated by Meson: it's already used multiple times, and we're
+	about to introduce another one, so let's give it its own variable.
+
+	prepare-release: Define BUILD_ROOT
+	This fits nicely with INSTALL_ROOT and the recently-introduced
+	RPMBUILD_ROOT; additionally, since $BUILD_ROOT is an absolute path,
+	we can use it directly as _sourcedir when calling rpmbuild.
+
+	prepare-release: Use a local directory for rpmbuild
+	The current release process stores files inside the user's rpmbuild
+	directory, usually part of $HOME, which is just bad manners. Use a
+	local directory instead.
+
+	prepare-release: Use a local directory for installation
+	The current release process stores files inside the user's home
+	directory, which is just bad manners. Use a local directory instead.
+
+	Since we no longer have to care about the destination directory
+	looking like an actual root filesystem, we can make the paths used
+	when installing MinGW builds shorter.
+
+	prepare-release: Use DESTDIR when installing
+	DESTDIR and --prefix are similar but serve distinct purposes: in
+	particular, the latter is intended for modifications that will
+	persist after installation, eg. storing binaries under /usr/bin
+	instead of /usr/local/bin, while the former is just a temporary
+	change that can be easily reverted, eg. stashing files in an
+	intermediate, unprivileged directory while building a package.
+
+	Our needs during the release process are closer to what DESTDIR is
+	designed for, so let's use that.
+
+2020-04-17  Andrea Bolognani  <abologna@redhat.com>
+
+	prepare-release: Ensure rpmbuild is executable
+	Using 'test -x' is more appropriate than 'test -r' for programs.
+
+	prepare-release: Drop RESULTS
+	This is a leftover from when the script was used to perform
+	automated tests: in that context, singling out the output of the
+	test suite made sense, but now we're no longer particularly
+	interested in it.
+
+	As a bonus, this allows us to drop a non-trivial chunk of fairly
+	obscure POSIX shell compatibility code.
+
+	prepare-release: Remove unnecessary cleanup
+	We already remove all of build/ at the beginning of the build
+	process, so there's no need to manually remove any of its subdirs
+	here.
+
+	prepare-release: Remove empty lines
+	These are unnecessary and inconsistent with the style used in the
+	rest of the script.
+
+	prepare-release: Use correct spec file for MinGW RPMs
+	Currently we're just building the very same spec file twice.
+
+	gitignore: Minimize
+	Things like editor backup files belong in the user's own ignore
+	file rather than in the project's.
+
+2020-04-16  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-04-15  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Add "osinfo_macros.h" to the installed headers
+	As the macros defined there are used in the public headers, this header
+	must be installed, otherwise we'll face errors such as:
+	```
+	/home/valabot/gnome3/include/libosinfo-1.0/osinfo/osinfo_entity.h:26:11: fatal error: osinfo/osinfo_macros.h: No such file or directory
+	   26 | # include "osinfo/osinfo_macros.h"
+	      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+	```
+
+	Reported-by: Rico Tzschichholz <ricotz@ubuntu.com>
+
+2020-04-15  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-04-13  Rafael Fonseca  <r4f4rfs@gmail.com>
+
+	osinfo_macros: mark inline functions as UNUSED
+	Fixes -Werror=unused-function with clang.
+
+	See: https://gitlab.gnome.org/GNOME/glib/-/commit/90f93a64f26666b955fdafb56acab54e596f4cc5
+
+	osinfo_macros: auto-cleanup func for module class
+	This will allow to manage the ownership of the class when reffing it
+	without having to cast it to GTypeClass.
+
+	See: https://gitlab.gnome.org/GNOME/glib/-/commit/ab25fa42cc6906df31352877154bb7b07f39552f
+
+2020-04-13  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	productfilter: Check productfilter in _clear_product_constraint{,s}
+	Let's just add a safety check in the _clear_product_constraint() and
+	_clear_product_constraints() functions.
+
+	devicelinkfilter: Check devicelinkfilter in _get_target_filter()
+	Let's just add a safety check in the _get_target_filter() function.
+
+	filter: Check filter in _clear_constraint{,s}
+	Let's just add a safety check in the _clear_constraint() and
+	_clear_constraints() functions.
+
+	db: Remove useless osinfo_db_finalize() declaration
+
+	install_config_param: Use g_clear_object in _set_value_map()
+
+	entity: Check entity in osinfo_entity_clear_param()
+	Let's just add a safety check in _clear_param().
+
+	Group all GObjectClass override methods
+
+	Use g_object_class_install_properties()
+	Using _install_properties() helps to keep the code cleaner and also
+	reduces the chance of having wrong props used.
+
+	Use G_DEFINE_*_WITH_PRIVATE
+	Together with this change, let's also get rid of our own _GET_PRIVATE()
+	macros and use _get_instance_private() method instead.
+
+	Use OSINFO_DECLARE_TYPE* macros
+
+	macros: Add OSINFO_DECLARE_TYPE* macros
+	OSINFO_DECLARE_TYPE is nothing else than a define to
+	G_DECLARE_DERIVABLE_TYPE macro from GLib.
+
+	OSINFO_DECLARE_TYPE_WITH_PRIVATE does exactly the same thing as
+	OSINFO_DECLARE_TYPE plus adds a private structure to the declared type
+	structure.
+
+	OSINFO_DECLARE_TYPE_WITH_PRIVATE_AND_CLASS does exactly the same thing
+	as OSINFO_DECLARE_TYPE_WITH_PRIVATE plus declares the class structure of
+	the declared type.
+
+	Using those new macros will help us to reduce a lot the GLib boilerplate
+	in our codebase.
+
+2020-04-13  Rafael Fonseca  <r4f4rfs@gmail.com>
+
+	Do not error out when inlining fails
+	-Winline causes error in GCC10, e.g
+
+	error: inlining failed in call to ‘OSINFO_LIST’: call is unlikely and code size would grow [-Werror=inline]
+
+	That particular macro, which will be introduced in the next commit, is
+	bas based on GLib own macros and it just so happens that if they were
+	also compiled with -Winline, the same error would happen [1]. Instead,
+	let just suppress those warnings.
+
+	[1] https://gitlab.gnome.org/GNOME/glib/issues/2042
+
+2020-04-13  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Enforce '-Wdeclaration-after-statement'
+	Enforcing that variables are only declared in the beginning of a block
+	makes the code easier to read.
+
+	image: Add cloud-init property
+	cloud-init has been added on 81c43558687b40d but the property has never
+	been added.
+
+	datamap: Rename _init() argument name
+	"list" was a c&p from when OsinfoDatamap was introduced.
+
+	avatar_format: Remove unused OSINFO_AVATAR_FORMAT_GET_PRIVATE()
+	OsinfoAvatarFormat does not have a private member.
+
+	tests: Remove duplicated tests
+	There's no reason to keep testing union, filter, and intersection on
+	types which inherit from OsinfoList. Mainly considering test-list
+	already test those.
+
+	Update Copyright year
+
+	Remove Fabiano Fidêncio's Copyright statements
+	Does not make sense to keep my own Copyright statements in 3 files of
+	the project, which were added during 2012's Google Summer of Code.
+
+	Remove Authors
+	Authors are not often updated and do not reflect the current state of
+	the code.
+
+	media/tree: Force "wget" user-agent in SoupSession
+	Spoiler alert, it'll sound insane ... because it is insane. Some servers
+	treat libsoup user-agent differently than how they treat wget
+	user-agent.
+
+	With the default agent set, Soup would end up downloading the file
+	containing the redirection information, instead of actually redirecting
+	to one of the addresses present in that file. While when forcing "wget"
+	as user-agent, the redirection happens as expected.
+
+	This issue was faced at least with CentOS[0] and Manjaro[1] links.
+
+	After a talk with Patrick Griffis, he mentioned that:
+	"I imagine there isn't too much of a problem pretending to be wget. I would
+	guess the assumption by these services is 'A CLI tool is downloading us and
+	not a browser' rather than 'wget has unique behavior'.".
+
+	Knowing that, let's force "wget" as user-agent on our side.
+
+	[0]: http://isoredirect.centos.org/centos/8/isos/x86_64/CentOS-8.1.1911-x86_64-dvd1.iso
+	[1]: https://osdn.net/dl/manjaro/manjaro-gnome-19.0.2-200312-linux54.iso
+
+2020-04-11  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-04-10  Rafael Fonseca  <r4f4rfs@gmail.com>
+
+	Add API to track distro cloud-init usernames
+	We already have cloud-init='true' so add a cloud-image-username='foo' to
+	go with it.
+
+	The property has been added to `OsinfoOs` instead of `OsinfoImage`
+	because it's not expected to change in a per image basis. Instead we can
+	define it once and inherit it, in the same way that it's done for
+	kernel-url-argument.
+
+	Fixes #39
+
+2020-04-09  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-03-31  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	tests: Add tests for only matching "rolling" as a fallback
+	The reason to have this in a different commit from the code is to ease
+	the backport of the previous patch by the distros which feel like doing
+	that.
+
+	db: Match "rolling" distros only as a fallback
+	Let's only match "rolling" distros as a fallback. The reason we need to
+	do so is to properly deal with distros as Manjaro, which has a mix of
+	versioned and rolling entries.
+
+	By matching the "rolling" only as a fallback, we ensure we'll have
+	exhausted all the "versioned" possibilites in the first place.
+
+	tests: Remove invalid release-status test
+	This should be tested on osinfo-db side and leaving this test here
+	causes failures in other non-related tests, all of them related to
+	identify_media, which gets the release-status and ends up hitting the
+	failures caused by this specific test.
+
+	media: Fix typo in the "eject-after-install" description
+	"installtion" should be "installation", as pointed out by Oğuz Ersen.
+	Together with the change, libosinfo.pot has been regenerated.
+
+2020-03-30  Andrea Bolognani  <abologna@redhat.com>
+
+	gitlab: Enable ccache usage
+	The $PATH definition has always included a reference to the symlink
+	farm that is used to enable transparent ccache usage, but since the
+	directory itself does not exist in the container image it never did
+	anything.
+
+	Since libvirt-jenkins-ci commit 2563aebb6c5c, container images do
+	actually contain the symlink directory, so it's finally possible to
+	enable ccache usage. This requires including the correct directory
+	in $PATH, as well as telling 1) ccache where to store its data and
+	2) GitLab that this data should be preserved across jobs.
+
+	The exact cache size (50 MB) is sort of arbitrary, but it should
+	be enough to store build artifacts for both osinfo-db-tools and
+	libosinfo for the foreseeable future.
+
+	gitlab: Create job templates
+	These avoid having to repeat the same build steps over and over.
+
+	gitlab: Use $MAKE
+	Just like $NINJA, this is defined as part of the container's
+	environment.
+
+	gitlab: Don't define $NINJA
+	Since libvirt-jenkins-ci commit 27cfddee8835, paths to build tools
+	such as ninja and make are exported in the container's environment
+	and can be used directly.
+
+2020-03-27  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-03-26  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	osinfo: Fix typo in the "initrd-path" description
+	"inirtd" -> "initrd"
+
+2020-03-25  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Added translation using Weblate (Turkish)
+
+2020-03-23  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	po: Import libosinfo.pot
+	Weblate requires the pot file to be commited, in order to be able to add
+	new translations to the project.
+
+	This file has to be updated every time a new string is added.
+
+2020-03-06  Pino Toscano  <ptoscano@redhat.com>
+
+	media: fix docs of OsinfoMediaDetectFlags
+	Move the "Since" after the description, so the description block
+	(including the version) is properly handled.
+
+	gitignore: remove almost all old content
+	Some of the content refers to autotools, which is not used anymore.
+	Also, meson enforces builddir!=srcdir, so the generated build files are
+	never directly among the sources.
+
+	Hence remove almost all the existing content, as it is not relevant.
+
+	Fix typo in Fabiano' surname
+
+2020-02-28  Pino Toscano  <ptoscano@redhat.com>
+
+	Fix OsinfoDB typo in docs
+
+	Add few missing "Since" in docs
+	Add the version information for some APIs, so it is easier to know when
+	they were introduced.
+
+	product: fix doc typo
+	Most probably one rogue s/OS/PRODUCT/ that changed CentOS to
+	CentPRODUCT.
+
+	firmware: fix doc of osinfo_firmware_get_firmware_type
+
+	device-driver: add doc for osinfo_device_driver_get_priority
+
+2020-02-26  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Add osinfo_firmware_is_supported()
+	This function has been missed when rebasing 904b65e7a1dda and. right
+	now, only its declaration in the header file is present.
+
+	Pointed out by Pino Toscano.
+
+2020-02-25  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Don't set $PKG_CONFIG_LIBDIR
+	The pkg-config binary used for MinGW builds is cross-compilation
+	aware, so it doesn't need us to point it in the right direction
+	when it comes to globally-installed .pc files.
+
+2020-02-24  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Perform MinGW builds in dedicated containers
+	Instead of using the same Fedora 30 container for both native and
+	MinGW builds, we are now building separate containers tailored for
+	each scenario. Re-introduce MinGW builds, and have them use the
+	new container images.
+
+	The corresponding libvirt-dockerfiles commit is ea6286acbbfd.
+
+	ci: Temporarily disable MinGW builds
+	We're going to use dedicated container images for them going
+	forward, but switching all at once would break CI so let's do it
+	in two steps: first disable the current builds, then enable the
+	new ones once the external requirements (container images) are
+	in place for a smoother transition.
+
+2020-02-16  Julien Humbert  <julroy67@gmail.com>
+
+	Translated using Weblate (French)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+2020-01-29  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	loader: Avoid conflicting object ids for extension files
+	Currently, when building the id of some of our objects, we do:
+	- Loop over the several objects of that type;
+	  - Concatenate the id of the parent object with the loop index;
+
+	By doing this, conflicts can be seen when using more than one extension
+	file, as osinfo-db does for Windows, where pre and post installable
+	drivers extension files are used and end up being loaded as we'd do:
+
+	- Loop over pre installable drivers;
+	  - Concatenate the id of the parent object with the loop index;
+
+	- Loop over post installable drivers;
+	  - Concatenate the id of the parent object with the loop index;
+
+	In order to avoid such issues, let's also use the filename as part of
+	the object id, avoiding then conflicts.
+
+	It's important to note that the conflict is cause by osinfo_list_add(),
+	which will replace the object in the list in case some other object with
+	the very same id is already stored there.
+
+2020-01-25  Julien Humbert  <julroy67@gmail.com>
+
+	Translated using Weblate (French)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+2020-01-24  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Translated using Weblate (Polish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.stg.fedoraproject.org/projects/libosinfo/libosinfo/pl/
+
+2020-01-13  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Silence -Wstring-plus-int
+	The warning is triggered because we're ignoring the "treeinfo-" part of
+	the OSINFO_TREE_PROP_TREEINFO_* string.
+
+	A possible way to fix that, instead of just disabling the warning, would
+	be doing something like:
+	```
+	const char *prop = OSINFO_TREE_PROP_TREEINFO_FAMILY;
+	prop += strlen("treeinfo-");
+	```
+
+	However, I sincerely do not think it's worth the verbosity of the
+	solution.
+
+2020-01-13  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Translated using Weblate (Polish)
+	Currently translated at 100.0% (168 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.stg.fedoraproject.org/projects/libosinfo/libosinfo/pl/
+
+2020-01-10  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	ci: Build osinfo-db in all containers
+	For some reason the job for building osinfo-db was not present in a few
+	distros' containers.
+
+	ci,centos8: Build project's RPM
+
+	ci: Add openSUSE 15.1 container
+
+	ci,centos8: Add DCO check
+	46db2e234a8ed82 introduced the DCO check. However, the check was not
+	added to the CentOS 8 container.
+
+	Partially revert "list: Update GObject boilerplate"
+	This partially reverts commit 706b6fd0d97ed572d92c4a33882605d561ebe3c8,
+	which introduced an ABI breakage by using G_DECLARE_DERIVABLE_TYPE when
+	declaring an OsinfoList.
+
+2020-01-09  Antoni Bella Pérez  <antonibella5@yahoo.com>
+
+	Translated using Weblate (Catalan)
+	Currently translated at 88.1% (148 of 168 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.stg.fedoraproject.org/projects/libosinfo/libosinfo/ca/
+	Reviewed-by: Daniel P. Berrangé <berrange@redhat.com>
+
+2020-01-07  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	po: Remove empty files
+	https://gitlab.com/libosinfo/libosinfo/issues/40
+
+2020-01-07  Daniel P. Berrangé  <berrange@redhat.com>
+
+	po: refresh translations from zanata
+
+2020-01-04  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	loader: Introduce OsinfoError enum
+	Let's create an OsinfoError enum instead of just using 0 as the error
+	type. This solves the following instrospection warning:
+	```
+	<unknown>:: Warning: Libosinfo: (ErrorQuarkFunction)error_quark: osinfo_error_quark: Couldn't find corresponding enumeration
+	```
+
+	product: Use product instead of prod as argument name
+	Header, source, and documentation were not matching with regarding to
+	the argument product name.
+
+	Let's standardise them and use product all over the place. By doing this
+	the following warnings will be fixed:
+	```
+	../osinfo/osinfo_product.c:318: Warning: Libosinfo: osinfo_product_get_codename: unknown parameter 'product' in documentation comment, should be 'prod'
+	../osinfo/osinfo_product.c:329: Warning: Libosinfo: osinfo_product_get_release_date_string: unknown parameter 'product' in documentation comment, should be 'prod'
+	../osinfo/osinfo_product.c:342: Warning: Libosinfo: osinfo_product_get_eol_date_string: unknown parameter 'product' in documentation comment, should be 'prod'
+	../osinfo/osinfo_product.c:369: Warning: Libosinfo: osinfo_product_get_release_date: unknown parameter 'product' in documentation comment, should be 'prod'
+	../osinfo/osinfo_product.c:388: Warning: Libosinfo: osinfo_product_get_eol_date: unknown parameter 'product' in documentation comment, should be 'prod'
+	```
+
+	install_config: Don't use different variable names in .c and .h
+	The tz variable, used in the source file, is declared in the header file
+	as timezone. Let's just use the same name used in the header as it's
+	more descriptive.
+
+	By doing so, the following GTK-Doc warning is fixed:
+	```
+	../osinfo/osinfo_install_config.c:231: Warning: Libosinfo: osinfo_install_config_set_l10n_timezone: unknown parameter 'tz' in documentation comment, should be 'timezone'
+	```
+
+	os: Move the "Since: " annotation
+	The "Since: " annotation should be *always* added to the end of the
+	comment block. More than that, multiplce "Since: " annotations cannot be
+	part of a same comment block and in order to solve that, let's avoid
+	adding a "Since: " in the end of the block, but explicitly mention when
+	each of the values were added.
+
+	By taking this approach, the following warnings can be avoided:
+	```
+	../osinfo/osinfo_os.h:90: Warning: Libosinfo: "@OSINFO_RELEASE_STATUS_RELEASED" parameter unexpected at this location:
+	 * @OSINFO_RELEASE_STATUS_RELEASED: A released OS.
+	    ^
+	../osinfo/osinfo_os.h:96: Error: Libosinfo: multiple "Since:" tags for identifier "OsinfoReleaseStatus":
+	 * Since: 1.4.0
+	   ^
+	../osinfo/osinfo_os.h:97: Warning: Libosinfo: "@OSINFO_RELEASE_STATUS_ROLLING" parameter unexpected at this location:
+	 * @OSINFO_RELEASE_STATUS_ROLLING: A rolling version of an OS and thus with no
+	    ^
+	```
+
+	tree: Move the "Since: " annotation
+	Let's move the "Since: " annotation to the end of the comment block,
+	otherwise the following warning will be shown:
+	```
+	../osinfo/osinfo_tree.h:41: Warning: Libosinfo: "@OSINFO_TREE_ERROR_NO_TREEINFO" parameter unexpected at this location:
+	 * @OSINFO_TREE_ERROR_NO_TREEINFO: No treeinfo found;
+	    ^
+	```
+
+	install_script: Move the "Since: " annotation
+	Let's move the "Since: " annotation to the end of the comment blocks,
+	otherwise the following warnings will be shown:
+	```
+	../osinfo/osinfo_install_script.h:100: Warning: Libosinfo: "@OSINFO_DEVICE_DRIVER_SIGNING_REQ_NONE" parameter unexpected at this location:
+	 * @OSINFO_DEVICE_DRIVER_SIGNING_REQ_NONE: Script do not require device drivers
+	    ^
+	../osinfo/osinfo_install_script.h:123: Warning: Libosinfo: "@OSINFO_INSTALL_SCRIPT_INJECTION_METHOD_CDROM" parameter unexpected at this location:
+	 * @OSINFO_INSTALL_SCRIPT_INJECTION_METHOD_CDROM: Support injection of the
+	    ^
+	../osinfo/osinfo_install_script.h:145: Warning: Libosinfo: "@OSINFO_INSTALL_SCRIPT_INSTALLATION_SOURCE_MEDIA" parameter unexpected at this location:
+	 * @OSINFO_INSTALL_SCRIPT_INSTALLATION_SOURCE_MEDIA: A media will be used as
+	    ^
+	```
+
+	install_config_param: Fix annotation for _get_value_map()
+	The function name was wrong, causing the following warning:
+	```
+	../osinfo/osinfo_install_config_param.h:94: Warning: Libosinfo: osinfo_install_config_param_get_value_map: return value: Missing (transfer) annotation
+	```
+
+	install_config_param: Don't use invalid "transfer" annotation
+	"transfer" annotation shouldn't be used with gboolean or enums, causing
+	the following warnings:
+	```
+	../osinfo/osinfo_install_config_param.c:252: Warning: Libosinfo: invalid "transfer" annotation for gboolean: only valid for array, struct, union, boxed, object and interface types
+	../osinfo/osinfo_install_config_param.c:267: Warning: Libosinfo: invalid "transfer" annotation for gboolean: only valid for array, struct, union, boxed, object and interface types
+	```
+
+2020-01-03  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	install_config_param: Move the "Since: " annotation
+	Let's move the "Since: " annotation to the end of the comment block,
+	otherwise the following warning will be shown:
+	```
+	../osinfo/osinfo_install_config_param.h:50: Warning: Libosinfo: "@OSINFO_INSTALL_CONFIG_PARAM_POLICY_NONE" parameter unexpected at this location:
+	 * @OSINFO_INSTALL_CONFIG_PARAM_POLICY_NONE: no policy defined
+	    ^
+	```
+
+	loader: Remove ueseless /** PUBLIC METHODS */ comment
+	The comment is not exactly helpful and causes the following GTK-Doc
+	error:
+	```
+	../osinfo/osinfo_loader.c:133: Error: Libosinfo: Skipping invalid GTK-Doc comment block:
+	/** PUBLIC METHODS */
+	^
+	```
+
+	db: Remove useless /** PUBLIC METHODS */ comment
+	The comment is not exactly helpful and causes the following GTK-Doc
+	error:
+	```
+	../osinfo/osinfo_db.c:183: Error: Libosinfo: Skipping invalid GTK-Doc comment block:
+	/** PUBLIC METHODS */
+	^
+	```
+
+	tree: Fix typo in osinfo_tree_new() annotation
+	trasfer -> transfer, otherwise the following warning will be shown:
+	```
+	../osinfo/osinfo_tree.c:472: Warning: Libosinfo: unknown annotation: trasfer
+	```
+
+	tree: Fix osinfo_tree_new() annotation
+	The extra line between the function name and its first parameter causes
+	the following warning:
+	```
+	../osinfo/osinfo_tree.c:467: Warning: Libosinfo: "@id" parameter unexpected at this location:
+	 * @id: the id of the tree to be created
+	    ^
+	```
+
+	media: Don't use invalid "transfer" annotation
+	"transfer" annotation shouldn't be used with gint or gint64, otherwise
+	the following warnings will be shown:
+	```
+	../osinfo/osinfo_media.c:1635: Warning: Libosinfo: invalid "transfer" annotation for gint: only valid for array, struct, union, boxed, object and interface types
+	../osinfo/osinfo_media.c:1768: Warning: Libosinfo: invalid "transfer" annotation for gint64: only valid for array, struct, union, boxed, object and interface types
+	```
+
+	media: Don't use deprecated annotations
+	Both Type and Transfer are deprecated and should be replaced by (type
+	TYPE) (transfer MODE), otherwise the following warnings will be shown:
+	```
+	../osinfo/osinfo_media.c:657: Warning: Libosinfo: GObject-Introspection specific GTK-Doc tag "Type" has been deprecated, please use annotations on the identifier instead:
+	     * Type: GLib.List(utf8)
+	       ^
+	../osinfo/osinfo_media.c:658: Warning: Libosinfo: GObject-Introspection specific GTK-Doc tag "Transfer" has been deprecated, please use annotations on the identifier instead:
+	     * Transfer: container
+	       ^
+	```
+
+	os_variant: Fix osinfo_os_variant_new() annotation
+	The extra line between the function name and its first parameter causes
+	the following warning:
+	```
+	../osinfo/osinfo_os_variant.c:129: Warning: Libosinfo: "@id" parameter unexpected at this location:
+	 * @id: the id of the os variant to be created
+	    ^
+	```
+
+	avatar_format: Don't use deprecated annotations
+	Both Type and Transfer are deprecated and should be replaced by (type
+	TYPE) (transfer MODE), otherwise the following warnings will be shown:
+	```
+	../osinfo/osinfo_avatar_format.c:102: Warning: Libosinfo: GObject-Introspection specific GTK-Doc tag "Type" has been deprecated, please use annotations on the identifier instead:
+	     * Type: GLib.List(utf8)
+	       ^
+	../osinfo/osinfo_avatar_format.c:103: Warning: Libosinfo: GObject-Introspection specific GTK-Doc tag "Transfer" has been deprecated, please use annotations on the identifier instead:
+	     * Transfer: container
+	       ^
+	```
+
+2019-12-18  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	ci: Add a job to enforce DCO Signed-off-by
+	This work is a copy-and-paste from what's been done by Daniel P. Berrangé
+	on https://gitlab.com/bichon-project/bichon
+
+	Add CONTRIBUTING.md
+	Let's follow osinfo-db example and have a contributing guide, targetting
+	both contributors and commiters.
+
+2019-12-12  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	ci: Add CentOS 8 container
+
+2019-12-11  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Update name for Ubuntu images
+	The corresponding libvirt-jenkins-ci commit is f289e64a5fd9.
+
+2019-12-09  Roman Bogorodskiy  <bogorodskiy@gmail.com>
+
+	meson: respect mandir option
+	Construct man installation dir from libosinfo_mandir instead of
+	libosinfo_datadir.
+
+	Reviewed-by: Fabiano Fidêncio <fidencio@redhat.com>
+
 2019-12-04  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Post release version bump to 1.8.0
 
 	Update NEWS for 1.7.1 release
 
