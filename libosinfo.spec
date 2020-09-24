@@ -6,7 +6,7 @@
 #
 Name     : libosinfo
 Version  : 1.8.0
-Release  : 17
+Release  : 18
 URL      : https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz
 Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz
 Source1  : https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz.asc
