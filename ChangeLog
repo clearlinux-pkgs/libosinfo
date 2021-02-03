@@ -1,3 +1,336 @@
+2021-02-02  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Update NEWS for 1.9.0 release
+
+2021-01-11  Jan Kuparinen  <copper_fin@hotmail.com>
+
+	Translated using Weblate (Finnish)
+	Currently translated at 15.8% (27 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fi/
+
+	Co-authored-by: Jan Kuparinen <copper_fin@hotmail.com>
+
+2021-01-11  Weblate  <noreply@weblate.org>
+
+	Update translation files
+	Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+	Co-authored-by: Weblate <noreply@weblate.org>
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+	Translation: libosinfo/libosinfo
+
+2021-01-08  Timm Bäder  <tbaeder@redhat.com>
+
+	install config: Rename a parameter
+	'timezone' is a global variable in time.h, so clang complains about
+	that.
+
+	build: Move bsd/mac checks to be compiler-specific
+	They depend on the compiler in use, not the operating system
+
+2020-12-15  Fabian Affolter  <mail@fabian-affolter.ch>
+
+	Translated using Weblate (German)
+	Currently translated at 64.7% (110 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/de/
+
+	Co-authored-by: Fabian Affolter <mail@fabian-affolter.ch>
+
+2020-12-15  Daniel P. Berrangé  <berrange@redhat.com>
+
+	ci: refresh containers for CentOS-8 PowerTools repo rename
+	A recent CentOS-8 update renamed the "PowerTools" repo to "powertools"
+	and since dnf is case sensitive wrt repo names, this broke ability to
+	build new containers.
+
+	The refresh fixes the repo name and pulls in other misc improvements
+	to containers.
+
+2020-12-01  Daniel P. Berrangé  <berrange@redhat.com>
+
+	gitlab: update refresh script for changed host naming convention
+
+	gitlab: refresh containers with lcitool for fully minimized base
+
+	gitlab: re-generate container images from lcitool
+	This introduces Fedora 33 and removes some redundant packages.
+
+	Note that rpm build is marked as skip on CentOS 8/Stream now, since
+	we're using pip provide meson instead of distro meson, and thus don't
+	have the %meson macro.
+
+2020-11-13  Cole Robinson  <crobinso@redhat.com>
+
+	loader: Print filename in libxml error string
+	This is how libvirt handles it. Would help debugging apparently
+	random failures like these bugs:
+
+	https://bugzilla.redhat.com/show_bug.cgi?id=1897356
+	https://bugzilla.redhat.com/show_bug.cgi?id=1651550
+
+2020-09-15  Milo Casagrande  <milo@milo.name>
+
+	Translated using Weblate (Italian)
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/it/
+
+	Co-authored-by: Milo Casagrande <milo@milo.name>
+
+2020-09-14  Milo Casagrande  <milo@milo.name>
+
+	Translated using Weblate (Italian)
+	Currently translated at 97.0% (165 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/it/
+
+	Co-authored-by: Milo Casagrande <milo@milo.name>
+
+2020-09-14  Pino Toscano  <toscano.pino@tiscali.it>
+
+	Translated using Weblate (Italian)
+	Currently translated at 97.0% (165 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/it/
+
+	Co-authored-by: Pino Toscano <toscano.pino@tiscali.it>
+
+2020-09-14  Fabio Tomat  <f.t.public@gmail.com>
+
+	Translated using Weblate (Friulian)
+	Currently translated at 66.4% (113 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fur/
+
+	Translated using Weblate (Spanish)
+
+	Currently translated at 12.9% (22 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/es/
+
+	Added translation using Weblate (Friulian)
+
+	Co-authored-by: Fabio Tomat <f.t.public@gmail.com>
+
+2020-09-14  Alexey Shabalin  <a.shabalin@gmail.com>
+
+	Added translation using Weblate (Russian)
+	Co-authored-by: Alexey Shabalin <a.shabalin@gmail.com>
+
+2020-09-14  Mikel Olasagasti  <mikel@olasagasti.info>
+
+	Added translation using Weblate (Basque)
+	Co-authored-by: Mikel Olasagasti <mikel@olasagasti.info>
+
+2020-08-15  Emilio Herrera  <ehespinosa57@gmail.com>
+
+	Translated using Weblate (Spanish)
+	Currently translated at 12.9% (22 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/es/
+
+2020-08-08  Rafael Fontenelle  <rafaelff@gnome.org>
+
+	Translated using Weblate (Portuguese (Brazil))
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pt_BR/
+
+2020-08-08  Kukuh Syafaat  <kukuh@syafaat.id>
+
+	Translated using Weblate (Indonesian)
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/id/
+
+2020-07-31  Julien Humbert  <julroy67@gmail.com>
+
+	Translated using Weblate (French)
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+2020-07-29  Oğuz Ersen  <oguzersen@protonmail.com>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+2020-07-29  Yuri Chornoivan  <yurchor@ukr.net>
+
+	Translated using Weblate (Ukrainian)
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/uk/
+
+2020-07-28  Piotr Drąg  <piotrdrag@gmail.com>
+
+	Translated using Weblate (Polish)
+	Currently translated at 100.0% (170 of 170 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pl/
+
+2020-07-28  Weblate  <noreply@weblate.org>
+
+	Update translation files
+	Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+
+2020-07-28  Pino Toscano  <ptoscano@redhat.com>
+
+	po: regenerate libosinfo.pot
+
+2020-07-28  Rafael Fontenelle  <rafaelff@gnome.org>
+
+	Fix misspellings
+
+2020-07-28  Pino Toscano  <ptoscano@redhat.com>
+
+	tools,detect: improve command line option help
+	Literal identifiers, such as 'media', 'tree', etc in translatable
+	strings are a bad idea, since they will likely be translated, misguiding
+	users reading the help of a translated version.
+
+	Refactor a bit the way these bits are show to the user:
+	- in the help of --format and --type, show a generic name of the
+	  argument value, and slightly improve the description text
+	- add a small description text after the listing of the command line
+	  options to mention the allowed values
+
+	Fixes: #42
+
+2020-07-28  Weblate  <noreply@weblate.org>
+
+	Update translation files
+	Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/
+
+2020-07-28  Rafael Fontenelle  <rafaelff@gnome.org>
+
+	Translated using Weblate (Portuguese (Brazil))
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pt_BR/
+
+
+	Translated using Weblate (Portuguese (Brazil))
+
+	Currently translated at 97.6% (165 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/pt_BR/
+
+2020-07-28  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	spec: Explicitly call %meson_build in the %build section
+	It was never needed before as the %meson_install macro would perform a
+	project rebuild. However, most recent versions of meson have changed the
+	%meson_install macro to use `--no-rebuild`, exposing then this issue on
+	our spec file.
+
+	Fixes: #43
+
+2020-06-22  Julien Humbert  <julroy67@gmail.com>
+
+	Translated using Weblate (French)
+	Currently translated at 100.0% (169 of 169 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+2020-06-17  Andrea Bolognani  <abologna@redhat.com>
+
+	ci: Don't use RPM=skip for container builds
+	It only makes sense for actual build jobs.
+
+	ci: Check for rpmbuild availability
+	Only try to build RPMs if the rpmbuild command is present on the
+	system. This means we no longer have to use the RPM=skip trick on
+	Debian-based targets, and can limit it to cases where building
+	RPMs is actually broken for some reason.
+
+	ci: Simplify rpmbuild command
+	We don't have to worry about cleaning up after ourselves, since
+	we're running the build inside an ephemeral container.
+
+	ci: Add CentOS Stream
+	Starting with
+
+	  commit d35a7dba9cc8ac3bb0647171628731c625d4e14f
+	  Author: Erik Skultety <eskultet@redhat.com>
+	  Date:   Thu Jun 4 16:17:36 2020 +0200
+
+	    guests: Add CentOS Stream
+
+	    The idea behind Stream is to get a preview of what the next RHEL-minor
+	    will look like, thus getting newer versions of packages than regular
+	    CentOS provides. It's supposed to be rolling, so currently it's based on
+	    CentOS 8, but once RHEL-9 is out, it will point to the next RHEL-9
+	    instead.  However, unlike debian-sid it doesn't have a dedicated URL
+	    resource (something like centos-stream), so we'll have to change it
+	    manually once it's flipped to point to next RHEL-9.
+
+	    Signed-off-by: Erik Skultety <eskultet@redhat.com>
+
+	lcitool supports CentOS Stream as a build target.
+
+	ci: Use $MESON_OPTS
+	This information is part of the container image now.
+
+	ci: Refresh Dockerfiles
+	Starting with
+
+	  commit 25c9da0aaa94fbca674dca6dec65f6348f335e7d
+	  Author: Andrea Bolognani <abologna@redhat.com>
+	  Date:   Fri May 22 17:38:10 2020 +0200
+
+	    lcitool: Generate MESON_OPTS in Dockerfiles
+
+	    This serves the same purpose as CONFIGURE_OPTS: enable seamless
+	    cross-compilation support, in this case for Meson-based projects.
+
+	    Only MinGW cross-compilation targets are currently supported.
+
+	    Signed-off-by: Andrea Bolognani <abologna@redhat.com>
+
+	lcitool will include a $MESON_OPTS environment variable, which can
+	be used to simplify our GitLab CI build rules, in the Dockerfiles
+	it generates.
+
+	ci: Move Dockerfiles to a subdir
+	This is consistent to how libvirt organizes its files, and ensures
+	things will remain tidy even as we introduce new features such as,
+	later on, Cirrus CI support.
+
+	ci: Clean up refresh script a bit
+	Remove some repetition through refactoring.
+
+2020-06-02  Fabiano Fidêncio  <fidencio@redhat.com>
+
+	Post release version bump to 1.9.0
+
 2020-05-29  Fabiano Fidêncio  <fidencio@redhat.com>
 
 	Update NEWS for 1.8.0 release
