@@ -6,7 +6,7 @@
 #
 Name     : libosinfo
 Version  : 1.10.0
-Release  : 20
+Release  : 21
 URL      : https://releases.pagure.org/libosinfo/libosinfo-1.10.0.tar.xz
 Source0  : https://releases.pagure.org/libosinfo/libosinfo-1.10.0.tar.xz
 Source1  : https://releases.pagure.org/libosinfo/libosinfo-1.10.0.tar.xz.asc
@@ -26,7 +26,6 @@ BuildRequires : docbook-xml
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : libsoup-dev
-BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libxslt)
 BuildRequires : vala-dev
@@ -119,7 +118,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1645059609
+export SOURCE_DATE_EPOCH=1661801452
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -134,8 +133,8 @@ ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/libosinfo
-cp %{_builddir}/libosinfo-1.10.0/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/libosinfo-1.10.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/libosinfo-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libosinfo/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
+cp %{_builddir}/libosinfo-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/libosinfo/01a6b4bf79aca9b556822601186afab86e8c4fbf || :
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang libosinfo
 
