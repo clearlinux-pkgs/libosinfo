@@ -1,4 +1,824 @@
+2023-10-27  Victor Toso  <victortoso@redhat.com>
+
+	Update NEWS for 1.11.0 release
+
+2023-05-19  김인수  <simmon@nplob.com>
+
+	Translated using Weblate (Korean)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Translated using Weblate (Korean)
+
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Co-authored-by: 김인수 <simmon@nplob.com>
+
+2023-04-26  Daniel P. Berrangé  <berrange@redhat.com>
+
+	rpm: convert license to SPDX format
+
+2023-04-08  김인수  <simmon@nplob.com>
+
+	Translated using Weblate (Korean)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Co-authored-by: 김인수 <simmon@nplob.com>
+
+2023-04-08  Pavel Borecki  <pavel.borecki@gmail.com>
+
+	Translated using Weblate (Czech)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/cs/
+
+	Co-authored-by: Pavel Borecki <pavel.borecki@gmail.com>
+
+2023-02-27  Fabio Tomat  <f.t.public@gmail.com>
+
+	Translated using Weblate (Friulian)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fur/
+
+	Co-authored-by: Fabio Tomat <f.t.public@gmail.com>
+
+2023-02-20  Seong-ho Cho  <darkcircle.0426@gmail.com>
+
+	Translated using Weblate (Korean)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Co-authored-by: Seong-ho Cho <darkcircle.0426@gmail.com>
+
+2023-02-20  Flo H  <emailtoflorian@gmail.com>
+
+	Translated using Weblate (German)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/de/
+
+	Co-authored-by: Flo H <emailtoflorian@gmail.com>
+
+2023-02-20  Temuri Doghonadze  <temuri.doghonadze@gmail.com>
+
+	Translated using Weblate (Georgian)
+	Currently translated at 64.3% (110 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Translated using Weblate (Georgian)
+
+	Currently translated at 63.7% (109 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Translated using Weblate (Georgian)
+
+	Currently translated at 59.0% (101 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Translated using Weblate (Georgian)
+
+	Currently translated at 57.3% (98 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Translated using Weblate (Georgian)
+
+	Currently translated at 56.7% (97 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Co-authored-by: Temuri Doghonadze <temuri.doghonadze@gmail.com>
+
+2023-02-20  Fabio Tomat  <f.t.public@gmail.com>
+
+	Translated using Weblate (Friulian)
+	Currently translated at 81.8% (140 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fur/
+
+	Co-authored-by: Fabio Tomat <f.t.public@gmail.com>
+
+2023-02-20  Julien Lepiller  <fedora-account@lepiller.eu>
+
+	Translated using Weblate (French)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+	Co-authored-by: Julien Lepiller <fedora-account@lepiller.eu>
+
+2023-02-20  Jiri Grönroos  <jiri.gronroos@iki.fi>
+
+	Translated using Weblate (Finnish)
+	Currently translated at 73.6% (126 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fi/
+
+	Co-authored-by: Jiri Grönroos <jiri.gronroos@iki.fi>
+
+2023-02-15  Will Thompson  <wjt@endlessos.org>
+
+	install-script: Fix "trough" typo in docstrings
+	A trough is a long, narrow container, open on top, for feeding or
+	watering animals.
+
+2022-09-30  Daniel P. Berrangé  <berrange@redhat.com>
+
+	ci: refresh with latest lcitool manifest
+	This refresh switches the CI for contributors to be triggered by merge
+	requests. Pushing to a branch in a fork will no longer run CI pipelines,
+	in order to avoid consuming CI minutes. To regain the original behaviour
+	contributors can opt-in to a pipeline on push
+
+	   git push <remote> -o ci.variable=RUN_PIPELINE=1
+
+	This variable can also be set globally on the repository, though this is
+	not recommended. Upstream repo pushes to branches will run CI.
+
+	The use of containers has changed in this update, with only the upstream
+	repo creating containers, in order to avoid consuming contributors'
+	limited storage quotas. A fork with existing container images may delete
+	them. Containers will be rebuilt upstream when pushing commits with CI
+	changes to the default branch. Any other scenario with CI changes will
+	simply install build pre-requisite packages in a throaway environment,
+	using the ci/buildenv/ scripts. These scripts may also be used on a
+	contributor's local machines.
+
+	With pipelines triggered by merge requests, it is also now possible to
+	workaround the inability of contributors to run pipelines if they have
+	run out of CI quota. A project member can trigger a pipeline from the
+	merge request, which will run in context of upstream, however, note
+	this should only be done after reviewing the code for any malicious
+	CI changes.
+
+2022-08-25  Temuri Doghonadze  <temuri.doghonadze@gmail.com>
+
+	Translated using Weblate (Georgian)
+	Currently translated at 54.3% (93 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Co-authored-by: Temuri Doghonadze <temuri.doghonadze@gmail.com>
+
+2022-08-25  Philipp Hahn  <pmhahn+fedora@pmhahn.de>
+
+	Translated using Weblate (German)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/de/
+
+	Co-authored-by: Philipp Hahn <pmhahn+fedora@pmhahn.de>
+
+2022-08-22  Dan Church  <amphetamachine@gmail.com>
+
+	DRY meson build script
+	Introduce versioned_name = 'libosinfo-1.0'
+
+	No functional change other than getting rid of the repetition.
+
+2022-08-11  Temuri Doghonadze  <temuri.doghonadze@gmail.com>
+
+	Translated using Weblate (Georgian)
+	Currently translated at 54.3% (93 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Added translation using Weblate (Georgian)
+
+	Co-authored-by: Temuri Doghonadze <temuri.doghonadze@gmail.com>
+
+2022-08-09  Daniel P. Berrangé  <berrange@redhat.com>
+
+	rpm: adapt to soup3, switch to %autosetup & add missing gtk-doc
+
+2022-08-08  Daniel P. Berrangé  <berrange@redhat.com>
+
+	rpm: merge mingw sub-packages into native spec
+	One specfile containing both native and mingw builds is the
+	new best practice for Fedora. This reduces the maint burden
+	and ensures the mingw packages don't fall behind.
+
+2022-07-18  김인수  <simmon@nplob.com>
+
+	Translated using Weblate (Korean)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Co-authored-by: 김인수 <simmon@nplob.com>
+
+2022-04-12  Seong-ho Cho  <darkcircle.0426@gmail.com>
+
+	Translated using Weblate (Korean)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Co-authored-by: Seong-ho Cho <darkcircle.0426@gmail.com>
+
+2022-03-27  Daniel Kolesa  <daniel@octaforge.org>
+
+	build: only include header file in the declared libosinfo dep
+	This prevents compiling a separate copy of the enums .c file
+	into anything using the libosinfo_dep target. Doing so would
+	result in types occasionally getting registered twice, at least
+	when libosinfo is built with Clang.
+
+	build: remove unused enum template files
+	These are not used as Meson uses its own builtin ones in the
+	gnome module, so they were just left over.
+
+	They were also incorrect as G_GNUC_CONST on _get_type would
+	break things (_get_type functions have side effects here).
+
+2022-03-08  Victor Toso  <victortoso@redhat.com>
+
+	ci: refresh generated files
+	* Adds EPEL to centos-stream-9
+	* Adds cppi dependency to Fedora and Opensuse
+	* Some cosmetic changes
+
+	ci: remove centos-8 due EOL
+
+2022-02-25  Matt Turner  <mattst88@gmail.com>
+
+	build: Add option to select libsoup ABI
+	This allows distributions that ship both versions of libsoup and choose
+	which version of libsoup will be linked.
+
+2022-02-16  Victor Toso  <victortoso@redhat.com>
+
+	tests: tree: Fix leaks of OsinfoTree *
+	==420507== 509 (48 direct, 461 indirect) bytes in 1 blocks are definitely lost in loss record 2,401 of 2,440
+	==420507==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48815F8: osinfo_tree_new (osinfo_tree.c:462)
+	==420507==    by 0x402E99: test_create_tree.constprop.0 (test-tree.c:119)
+	==420507==    by 0x403027: test_matching (test-tree.c:176)
+	==420507==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x4023B9: main (test-tree.c:206)
+	==420507==
+	==420507== 511 (48 direct, 463 indirect) bytes in 1 blocks are definitely lost in loss record 2,402 of 2,440
+	==420507==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48815F8: osinfo_tree_new (osinfo_tree.c:462)
+	==420507==    by 0x402E99: test_create_tree.constprop.0 (test-tree.c:119)
+	==420507==    by 0x402FD2: test_matching (test-tree.c:155)
+	==420507==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x4023B9: main (test-tree.c:206)
+	==420507==
+	==420507== 600 (48 direct, 552 indirect) bytes in 1 blocks are definitely lost in loss record 2,412 of 2,440
+	==420507==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48815F8: osinfo_tree_new (osinfo_tree.c:462)
+	==420507==    by 0x402E99: test_create_tree.constprop.0 (test-tree.c:119)
+	==420507==    by 0x402FEF: test_matching (test-tree.c:162)
+	==420507==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x4023B9: main (test-tree.c:206)
+	==420507==
+	==420507== 626 (48 direct, 578 indirect) bytes in 1 blocks are definitely lost in loss record 2,413 of 2,440
+	==420507==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48815F8: osinfo_tree_new (osinfo_tree.c:462)
+	==420507==    by 0x402E99: test_create_tree.constprop.0 (test-tree.c:119)
+	==420507==    by 0x40300E: test_matching (test-tree.c:169)
+	==420507==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x4023B9: main (test-tree.c:206)
+	==420507==
+	==420507== 634 (48 direct, 586 indirect) bytes in 1 blocks are definitely lost in loss record 2,414 of 2,440
+	==420507==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420507==    by 0x48815F8: osinfo_tree_new (osinfo_tree.c:462)
+	==420507==    by 0x402E99: test_create_tree.constprop.0 (test-tree.c:119)
+	==420507==    by 0x402FB9: test_matching (test-tree.c:148)
+	==420507==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420507==    by 0x4023B9: main (test-tree.c:206)
+
+	and
+
+	==420470== 1,007 (48 direct, 959 indirect) bytes in 1 blocks are definitely lost in loss record 2,456 of 2,477
+	==420470==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420470==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420470==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420470==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420470==    by 0x48815F8: osinfo_tree_new (osinfo_tree.c:462)
+	==420470==    by 0x48817B2: load_keyinfo (osinfo_tree.c:618)
+	==420470==    by 0x4031A2: test_create_from_treeinfo (test-tree.c:93)
+	==420470==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420470==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420470==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420470==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420470==    by 0x4023B9: main (test-tree.c:206)
+
+	tests: media: Fix leaks of OsinfoMedia *
+	==419218== 785 (48 direct, 737 indirect) bytes in 1 blocks are definitely lost in loss record 2,438 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x4034CF: test_create_media (test-media.c:151)
+	==419218==    by 0x4034CF: test_matching (test-media.c:228)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+	==419218==
+	==419218== 787 (48 direct, 739 indirect) bytes in 1 blocks are definitely lost in loss record 2,439 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x4033EB: test_create_media (test-media.c:151)
+	==419218==    by 0x4033EB: test_matching (test-media.c:188)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+	==419218==
+	==419218== 827 (48 direct, 779 indirect) bytes in 1 blocks are definitely lost in loss record 2,440 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x402EF3: test_create_media (test-media.c:151)
+	==419218==    by 0x403435: test_matching (test-media.c:196)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+	==419218==
+	==419218== 871 (48 direct, 823 indirect) bytes in 1 blocks are definitely lost in loss record 2,443 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x402EF3: test_create_media (test-media.c:151)
+	==419218==    by 0x403491: test_matching (test-media.c:212)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+	==419218==
+	==419218== 871 (48 direct, 823 indirect) bytes in 1 blocks are definitely lost in loss record 2,444 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x402EF3: test_create_media (test-media.c:151)
+	==419218==    by 0x4034BB: test_matching (test-media.c:220)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+	==419218==
+	==419218== 929 (48 direct, 881 indirect) bytes in 1 blocks are definitely lost in loss record 2,446 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x402EF3: test_create_media (test-media.c:151)
+	==419218==    by 0x403467: test_matching (test-media.c:204)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+	==419218==
+	==419218== 949 (48 direct, 901 indirect) bytes in 1 blocks are definitely lost in loss record 2,447 of 2,468
+	==419218==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==419218==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==419218==    by 0x402EF3: test_create_media (test-media.c:151)
+	==419218==    by 0x4033D7: test_matching (test-media.c:180)
+	==419218==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==419218==    by 0x40232F: main (test-media.c:257)
+
+	tests: db: Fix leaks of OsinfoMedia *
+	==448366== 18,584 (256 direct, 18,328 indirect) bytes in 2 blocks are definitely lost in loss record 2,649 of 2,650
+	==448366==    at 0x48F34A3: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x4888427: osinfo_loader_get_os (osinfo_loader.c:497)
+	==448366==    by 0x4888427: osinfo_loader_get_os (osinfo_loader.c:492)
+	==448366==    by 0x488A3EB: osinfo_loader_os (osinfo_loader.c:1646)
+	==448366==    by 0x488A3EB: osinfo_loader_root (osinfo_loader.c:1886)
+	==448366==    by 0x488A3EB: osinfo_loader_process_xml (osinfo_loader.c:1975)
+	==448366==    by 0x488A3EB: osinfo_loader_process_file_reg_xml (osinfo_loader.c:2184)
+	==448366==    by 0x488D18A: osinfo_loader_process_list (osinfo_loader.c:2517)
+	==448366==    by 0x488D38F: osinfo_loader_process_path (osinfo_loader.c:2589)
+	==448366==    by 0x40621F: test_identify_media (test-db.c:434)
+	==448366==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==448366==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==448366==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==448366==
+	==448366== 44,969 (896 direct, 44,073 indirect) bytes in 7 blocks are definitely lost in loss record 2,650 of 2,650
+	==448366==    at 0x48F34A3: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==448366==    by 0x4888427: osinfo_loader_get_os (osinfo_loader.c:497)
+	==448366==    by 0x4888427: osinfo_loader_get_os (osinfo_loader.c:492)
+	==448366==    by 0x488A3EB: osinfo_loader_os (osinfo_loader.c:1646)
+	==448366==    by 0x488A3EB: osinfo_loader_root (osinfo_loader.c:1886)
+	==448366==    by 0x488A3EB: osinfo_loader_process_xml (osinfo_loader.c:1975)
+	==448366==    by 0x488A3EB: osinfo_loader_process_file_reg_xml (osinfo_loader.c:2184)
+	==448366==    by 0x488D18A: osinfo_loader_process_list (osinfo_loader.c:2517)
+	==448366==    by 0x488D38F: osinfo_loader_process_path (osinfo_loader.c:2589)
+	==448366==    by 0x406B32: test_identify_all_media (test-db.c:547)
+	==448366==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==448366==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==448366==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+
+	and
+
+	==408306== 788 (48 direct, 740 indirect) bytes in 1 blocks are definitely lost in loss record 2,626 of 2,668
+	==408306==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==408306==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==408306==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==408306==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==408306==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==408306==    by 0x406B7B: test_identify_all_media (test-db.c:551)
+	==408306==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==408306==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==408306==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==408306==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==408306==    by 0x40366E: main (test-db.c:918)
+
+	and
+
+	==402464== 48 bytes in 1 blocks are definitely lost in loss record 1,587 of 2,714
+	==402464==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==402464==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==402464==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==402464==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==402464==    by 0x487D918: osinfo_media_new (osinfo_media.c:704)
+	==402464==    by 0x406826: test_identify_media (test-db.c:519)
+	==402464==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==402464==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==402464==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==402464==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==402464==    by 0x40366E: main (test-db.c:917)
+
+	tests: os: Fix some memory leaks
+	* OsinfoLoader
+
+	==413574== 2,512 (40 direct, 2,472 indirect) bytes in 1 blocks are definitely lost in loss record 2,489 of 2,495
+	==413574==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==413574==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==413574==    by 0x48DBD1C: g_object_new_with_properties (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==413574==    by 0x48DC820: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==413574==    by 0x407270: test_firmwares_complete_list_inheritance (test-os.c:897)
+	==413574==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==413574==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==413574==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==413574==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==413574==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==413574==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==413574==    by 0x403769: main (test-os.c:1062)
+
+	and
+
+	==414148== 2,480 (40 direct, 2,440 indirect) bytes in 1 blocks are definitely lost in loss record 2,477 of 2,484
+	==414148==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414148==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414148==    by 0x48DBD1C: g_object_new_with_properties (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414148==    by 0x48DC820: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414148==    by 0x40531D: test_firmwares_complete_list (test-os.c:855)
+	==414148==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414148==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414148==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414148==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414148==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414148==    by 0x403769: main (test-os.c:1061)
+
+	* OsinfoTreeList
+
+	==414820== 1,793 (48 direct, 1,745 indirect) bytes in 1 blocks are definitely lost in loss record 2,424 of 2,438
+	==414820==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414820==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414820==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414820==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414820==    by 0x4879165: osinfo_os_get_tree_list (osinfo_os.c:698)
+	==414820==    by 0x404D3C: test_loader (test-os.c:124)
+	==414820==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414820==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414820==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414820==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414820==    by 0x403769: main (test-os.c:1060)
+
+	* OsinfoFirmwareList
+
+	==414989== 1,537 (48 direct, 1,489 indirect) bytes in 1 blocks are definitely lost in loss record 2,391 of 2,405
+	==414989==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414989==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414989==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414989==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==414989==    by 0x48763CA: osinfo_list_new_copy (osinfo_list.c:458)
+	==414989==    by 0x4877257: get_all_firmwares_cb (osinfo_os.c:1536)
+	==414989==    by 0x487348E: osinfo_product_foreach_related (osinfo_product.c:436)
+	==414989==    by 0x4873502: osinfo_product_foreach_related (osinfo_product.c:467)
+	==414989==    by 0x487A6A4: osinfo_os_get_complete_firmware_list (osinfo_os.c:1623)
+	==414989==    by 0x40744D: test_firmwares_complete_list_inheritance (test-os.c:942)
+	==414989==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==414989==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+
+	* OsinfoDeviceDriverList
+
+	==415264== 512 (48 direct, 464 indirect) bytes in 1 blocks are definitely lost in loss record 2,355 of 2,384
+	==415264==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==415264==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==415264==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==415264==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==415264==    by 0x487A126: osinfo_os_get_device_drivers_prioritized (osinfo_os.c:1251)
+	==415264==    by 0x405830: test_device_driver_priority_helper (test-os.c:235)
+	==415264==    by 0x4059BD: test_device_driver_prioritized_priority (test-os.c:262)
+	==415264==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==415264==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==415264==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==415264==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==415264==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+
+	tests: firmware: Fix some memory leaks
+	* OsinfoFirmware
+
+	==401454== 419 (48 direct, 371 indirect) bytes in 1 blocks are definitely lost in loss record 2,316 of 2,351
+	==401454==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401454==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401454==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401454==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401454==    by 0x486C5FD: osinfo_firmware_new (osinfo_firmware.c:161)
+	==401454==    by 0x4029A9: test_basic (test-firmware.c:27)
+	==401454==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401454==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401454==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401454==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401454==    by 0x4022F0: main (test-firmware.c:85)
+
+	* OsinfoFilter
+
+	==401543== 354 (40 direct, 314 indirect) bytes in 1 blocks are definitely lost in loss record 2,300 of 2,341
+	==401543==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401543==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401543==    by 0x48DBD1C: g_object_new_with_properties (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401543==    by 0x48DC820: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==401543==    by 0x402CA6: test_loaded (test-firmware.c:57)
+	==401543==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401543==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401543==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401543==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401543==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==401543==    by 0x402330: main (test-firmware.c:85)
+
+2022-02-15  Victor Toso  <victortoso@redhat.com>
+
+	tests: image: Fix leak of OsinfoOsVariantList *
+	==383130== 1,782 (96 direct, 1,686 indirect) bytes in 2 blocks are definitely lost in loss record 2,336 of 2,350
+	==383130==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==383130==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==383130==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==383130==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==383130==    by 0x4883EFA: osinfo_image_get_os_variants (osinfo_image.c:356)
+	==383130==    by 0x402B9B: test_loaded (test-image.c:74)
+	==383130==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==383130==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==383130==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==383130==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==383130==    by 0x402346: main (test-image.c:114)
+
+	media: Fix leak of GList *
+	Found by covscan.
+
+	  6.  libosinfo-1.9.0/osinfo/osinfo_media.c:1675: alloc_fn: Storage is returned from allocation function "osinfo_entity_get_param_value_list".
+	  7.  libosinfo-1.9.0/osinfo/osinfo_media.c:1675: var_assign: Assigning: "ids" = storage returned from "osinfo_entity_get_param_value_list(OSINFO_ENTITY(media), "variant")".
+	  8.  libosinfo-1.9.0/osinfo/osinfo_media.c:1679: var_assign: Assigning: "node" = "ids".
+	  12. libosinfo-1.9.0/osinfo/osinfo_media.c:1690: leaked_storage: Variable "ids" going out of scope leaks the storage it points to.
+	  #  1688|       g_object_unref(os_variants);
+	  #  1689|
+	  #  1690|->     return media_variants;
+	  #  1691|   }
+	  #  1692|
+
+	install-script: Fix leak of GList *
+	Found by covscan.
+
+	 14. libosinfo-1.9.0/osinfo/osinfo_install_script.c:832:
+	     leaked_storage: Variable "values" going out of scope leaks the
+	     storage it points to.
+	 #  830|                   propagate_libxml_error(error, _("Unable to create XML node '%s'"),
+	 #  831|                                          (const gchar *)tmp1->data);
+	 #  832|->                 goto error;
+	 #  833|               }
+	 #  834|               if (!(xmlAddChild(node, data))) {
+
+	tree: Fix small leak of char *
+	==422112== 15 bytes in 1 blocks are definitely lost in loss record 216 of 2,333
+	==422112==    at 0x484486F: malloc (vg_replace_malloc.c:381)
+	==422112==    by 0x4AEE9AF: __vasprintf_internal (vasprintf.c:71)
+	==422112==    by 0x49B3812: g_vasprintf (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x4989830: g_strdup_vprintf (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x49898EC: g_strdup_printf (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x488173F: load_keyinfo (osinfo_tree.c:597)
+	==422112==    by 0x4032B2: test_create_from_treeinfo (test-tree.c:93)
+	==422112==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==422112==    by 0x402449: main (test-tree.c:206)
+
+	tree: Fix leaks in osinfo_tree_get_os_variants()
+	Leak of OsinfoFilter *
+
+	==420790== 343 (40 direct, 303 indirect) bytes in 1 blocks are definitely lost in loss record 2,302 of 2,343
+	==420790==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420790==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420790==    by 0x48DBD1C: g_object_new_with_properties (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420790==    by 0x48DC820: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==420790==    by 0x4882C2D: osinfo_tree_get_os_variants (osinfo_tree.c:1147)
+	==420790==    by 0x402C0A: test_os_variants (test-tree.c:57)
+	==420790==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420790==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420790==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420790==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==420790==    by 0x402449: main (test-tree.c:206)
+
+	Leak of GList *
+
+	==421621== 24 bytes in 1 blocks are definitely lost in loss record 1,016 of 2,334
+	==421621==    at 0x484486F: malloc (vg_replace_malloc.c:381)
+	==421621==    by 0x496E3D8: g_malloc (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x4987024: g_slice_alloc (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x4963A2A: g_list_copy_deep (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x4882C25: osinfo_tree_get_os_variants (osinfo_tree.c:1145)
+	==421621==    by 0x402C0A: test_os_variants (test-tree.c:57)
+	==421621==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==421621==    by 0x402449: main (test-tree.c:206)
+
+	os: Fix leak of a GList *
+	Just the cointainer is leaking.
+
+	==416264== 48 (24 direct, 24 indirect) bytes in 1 blocks are definitely lost in loss record 1,444 of 2,345
+	==416264==    at 0x484486F: malloc (vg_replace_malloc.c:381)
+	==416264==    by 0x496E3D8: g_malloc (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x4987024: g_slice_alloc (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x495DDA9: g_list_prepend (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x4958418: g_hash_table_get_values (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x487A10F: osinfo_os_get_device_drivers_prioritized (osinfo_os.c:1248)
+	==416264==    by 0x405835: test_device_driver_priority_helper (test-os.c:236)
+	==416264==    by 0x4059E2: test_device_driver_prioritized_priority (test-os.c:267)
+	==416264==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==416264==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+
+	db: Fix leak of OsinfoInstallScriptList *
+	==404438== 320 (48 direct, 272 indirect) bytes in 1 blocks are definitely lost in loss record 2,563 of 2,686
+	==404438==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==404438==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==404438==    by 0x48DC2C7: g_object_new_valist (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==404438==    by 0x48DC7FC: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==404438==    by 0x48763CA: osinfo_list_new_copy (osinfo_list.c:458)
+	==404438==    by 0x487F24E: osinfo_media_get_install_script_list (osinfo_media.c:1841)
+	==404438==    by 0x488690C: fill_media (osinfo_db.c:773)
+	==404438==    by 0x488690C: osinfo_db_identify_media (osinfo_db.c:826)
+	==404438==    by 0x406716: test_identify_media (test-db.c:502)
+	==404438==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==404438==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==404438==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==404438==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+
+	image: Fix leaks in osinfo_image_get_os_variants()
+	==382381== 48 bytes in 2 blocks are definitely lost in loss record 1,441 of 2,342
+	==382381==    at 0x484486F: malloc (vg_replace_malloc.c:381)
+	==382381==    by 0x496E3D8: g_malloc (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x4987024: g_slice_alloc (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x4963A2A: g_list_copy_deep (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x4883EE5: osinfo_image_get_os_variants (osinfo_image.c:353)
+	==382381==    by 0x402C6A: test_loaded (test-image.c:74)
+	==382381==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x402386: main (test-image.c:114)
+	==382381==
+	==382381== 686 (80 direct, 606 indirect) bytes in 2 blocks are definitely lost in loss record 2,316 of 2,342
+	==382381==    at 0x48F3437: g_type_create_instance (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==382381==    by 0x48DAD4C: ??? (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==382381==    by 0x48DBD1C: g_object_new_with_properties (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==382381==    by 0x48DC820: g_object_new (in /usr/lib64/libgobject-2.0.so.0.7000.3)
+	==382381==    by 0x4883EED: osinfo_image_get_os_variants (osinfo_image.c:355)
+	==382381==    by 0x402C6A: test_loaded (test-image.c:74)
+	==382381==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382381==    by 0x402386: main (test-image.c:114)
+
+	loader: clear pointer before using it
+	osinfo_loader_nodeset() expects xmlNodePtr ** to be NULL and it will
+	set it to NULL if not already set. This can lead to memory leaks as
+	seen in previous commit. Let's clear the pointer instead and add a
+	guard to clarify the parameter's expectations.
+
+	loader: Fix leak of xmlNodePtr *
+	The pointer is used as output parameter of osinfo_loader_nodeset() which
+	sets it to NULL before using it. The caller should free its contents
+	before reusing it.
+
+	==382836== 104 bytes in 8 blocks are definitely lost in loss record 2,097 of 2,333
+	==382836==    at 0x4849464: calloc (vg_replace_malloc.c:1328)
+	==382836==    by 0x496E510: g_malloc0 (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382836==    by 0x4888DD7: osinfo_loader_nodeset (osinfo_loader.c:237)
+	==382836==    by 0x488A98E: osinfo_loader_os (osinfo_loader.c:1661)
+	==382836==    by 0x488A98E: osinfo_loader_root (osinfo_loader.c:1884)
+	==382836==    by 0x488A98E: osinfo_loader_process_xml (osinfo_loader.c:1973)
+	==382836==    by 0x488A98E: osinfo_loader_process_file_reg_xml (osinfo_loader.c:2182)
+	==382836==    by 0x488D07A: osinfo_loader_process_list (osinfo_loader.c:2515)
+	==382836==    by 0x488D27F: osinfo_loader_process_path (osinfo_loader.c:2587)
+	==382836==    by 0x402A61: test_loaded (test-image.c:59)
+	==382836==    by 0x4992BD5: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382836==    by 0x49928FA: ??? (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382836==    by 0x49930A9: g_test_run_suite (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382836==    by 0x49930D0: g_test_run (in /usr/lib64/libglib-2.0.so.0.7000.3)
+	==382836==    by 0x402386: main (test-image.c:114)
+
 2022-02-14  Victor Toso  <victortoso@redhat.com>
+
+	Post release version bump to 1.11.0
 
 	Update NEWS for 1.10.0 release
 

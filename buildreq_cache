@@ -1,7 +1,7 @@
-1.10.0
+1.11.0
 docbook-xml
 gtk-doc
 libsoup-dev
-pkgconfig(libsoup-2.4)
 pkgconfig(libsoup-3.0)
+pkgconfig(libxml-2.0)
 pkgconfig(libxslt)
