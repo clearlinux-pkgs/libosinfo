@@ -2,6 +2,7 @@
 docbook-xml
 gtk-doc
 libsoup-dev
+perl(Getopt::Long)
 pkgconfig(libsoup-3.0)
 pkgconfig(libxml-2.0)
 pkgconfig(libxslt)
