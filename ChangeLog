@@ -1,4 +1,150 @@
+2024-10-29  Victor Toso  <victortoso@redhat.com>
+
+	Update NEWS for 1.12.0 release
+
+2024-10-15  Léane GRASSER  <leane.grasser@proton.me>
+
+	Translated using Weblate (French)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/fr/
+
+	Co-authored-by: Léane GRASSER <leane.grasser@proton.me>
+
+2024-10-15  jianqing yan  <yanjianqing@kylinos.cn>
+
+	Translated using Weblate (Chinese (Simplified))
+	Currently translated at 0.0% (0 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/zh_Hans/
+
+	Co-authored-by: jianqing yan <yanjianqing@kylinos.cn>
+
+2024-10-15  Oğuz Ersen  <oguz@ersen.moe>
+
+	Translated using Weblate (Turkish)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/tr/
+
+	Co-authored-by: Oğuz Ersen <oguz@ersen.moe>
+
+2024-10-15  Pino Toscano  <toscano.pino@tiscali.it>
+
+	Translated using Weblate (Italian)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/it/
+
+	Co-authored-by: Pino Toscano <toscano.pino@tiscali.it>
+
+2024-10-15  Jingge Chen  <mariocanfly@hotmail.com>
+
+	Added translation using Weblate (Chinese (Simplified))
+	Co-authored-by: Jingge Chen <mariocanfly@hotmail.com>
+
+2024-10-15  김인수  <simmon@nplob.com>
+
+	Translated using Weblate (Korean)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ko/
+
+	Co-authored-by: 김인수 <simmon@nplob.com>
+
+2024-10-15  Temuri Doghonadze  <temuri.doghonadze@gmail.com>
+
+	Translated using Weblate (Georgian)
+	Currently translated at 100.0% (171 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Translated using Weblate (Georgian)
+
+	Currently translated at 70.7% (121 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Translated using Weblate (Georgian)
+
+	Currently translated at 64.9% (111 of 171 strings)
+
+	Translation: libosinfo/libosinfo
+	Translate-URL: https://translate.fedoraproject.org/projects/libosinfo/libosinfo/ka/
+
+	Co-authored-by: Temuri Doghonadze <temuri.doghonadze@gmail.com>
+
+2024-05-14  Daniel P. Berrangé  <berrange@redhat.com>
+
+	ci: show meson and test logs in build jobs
+	Make it easier to diagnose CI failures, by showing the meson-log.txt
+	file contents on error, and also using '--print-errorlogs' for tests.
+
+	ci: refresh with latest lcitool manifest
+	Changes include
+
+	 * Adding Alpine distros, dropping EOL CentOS Stream 8,
+	   adding AlmaLinux 9, updating Debian, Fedora, and
+	   Ubuntu versions, renaming OpenSUSE
+
+	 * The CI jobs are no longer split into 'prebuilt' and 'local'
+	   pairs
+
+	gitlab: simplify setting of multilib variable
+	This change makes it do the right thing on distros other than those which
+	are dpkg and rpm based, such as Alpine Linux.
+
+	gitlab: avoid use of 'pushd' shell built-in
+	The 'pushd' / 'popd' built-ins are not available in the Alpine
+	Linux shell.
+
+	ci: add 'libc' package as a depedency
+	We need this explicitly, so that 'musl-dev' is pulled in on Alpine
+	distros, as it isn't pulled in as a side effect of other deps.
+
+	ci: import lcitool project package list definitions
+	The project package lists previously held in libvirt-ci.git are
+	being moved into their respective project git repos.
+
+2024-03-27  Michal Privoznik  <mprivozn@redhat.com>
+
+	tools: Don't leak detected media/tree structs
+	Both osinfo_media_create_from_location() and
+	osinfo_tree_create_from_location() transfer memory ownership of
+	returned objects onto the caller (main() in osinfo-detect.c in
+	this case). But the caller never unref()-s either of them.
+	While this is pretty harmless as the program is short lived, it
+	sets a bad example and may introduce memleaks to some other code
+	that takes inspiration from our tools.
+
+	osinfo_media: Don't leak memory for a supplementary filter
+	When osinfo_media_get_os_variants() is called a supplementary
+	OsinfoFilter is created but never unref()-ed leading to a memory
+	leak.
+
+	osinfo_media: Don't leak CreateFromLocationAsyncData::uri
+	Inside of osinfo_media_create_from_location_with_flags_async()
+	the 'uri' member of a CreateFromLocationAsyncData struct is
+	allocated. But corresponding g_free() call is missing in
+	create_from_location_async_data_free().
+
+2023-11-27  Michal Privoznik  <mprivozn@redhat.com>
+
+	osinfo: Make xmlError struct constant in propagate_libxml_error()
+	In libxml2 commit v2.12.0~14 the API changed so that
+	xmlGetLastError() returns pointer to a constant xmlError struct.
+	Reflect this change in our code.
+
 2023-10-27  Victor Toso  <victortoso@redhat.com>
+
+	Post release version bump to 1.12.0
 
 	Update NEWS for 1.11.0 release
 
